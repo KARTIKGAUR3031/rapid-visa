@@ -6,7 +6,7 @@ RUN composer install --no-dev --optimize-autoloader
 
 # Stage 2: Setup the production image
 FROM php:8.2-apache
-RUN apt-get update && apt-get install -y libpq-dev && docker-php-ext-install pdo pdo_pgsql pgsql
+RUN apt-get update && apt-get install -y libpq-dev &&RUN apt-get update && apt-get install -y zlib1g-dev libzip-dev libpq-dev && docker-php-ext-install zip pdo pdo_pgsql pgsql
 WORKDIR /var/www/html
 
 # Copy vendor files from the first stage
