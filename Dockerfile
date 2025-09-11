@@ -6,6 +6,7 @@ RUN composer install --no-dev --optimize-autoloader
 
 # Stage 2: Setup the production image
 FROM php:8.2-apache
+RUN docker-php-ext-install pdo pdo_pgsql pgsql
 WORKDIR /var/www/html
 
 # Copy vendor files from the first stage
