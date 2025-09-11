@@ -5,7 +5,7 @@ COPY . .
 RUN composer install --no-dev --optimize-autoloader
 
 # Stage 2: Setup the production image
-FROM php:8.1-apache
+FROM php:8.2-apache
 WORKDIR /var/www/html
 
 # Copy vendor files from the first stage
