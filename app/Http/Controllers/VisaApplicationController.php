@@ -51,13 +51,26 @@ class VisaApplicationController extends Controller
             return redirect()->back()->withErrors($e->errors())->withInput();
         }
 
+        $application = new VisaApplication($validatedData);
+        $application->user_id = Auth::id();
+
+        $fileKeys = ['aadhaar_card', 'passport_back', 'flight_ticket', 'old_visa', 'passport_front', 'passport_photo', 'hotel_booking'];
+        foreach ($fileKeys as $key) {
+            if ($request->hasFile($key)) {
+                $path = $request->file($key)->store('documents', 'public');
+                $application->$key = $path;
+            }
+        }
+
+        $application->save();
+
+        // Mail sending logic
         $data = $request->only([
             'full_name', 'email', 'gender', 'phone_number', 'date_of_birth',
             'passport_number', 'passport_valid_till', 'passport_place_of_issue', 'country'
         ]);
 
         $filesToAttach = [];
-        $fileKeys = ['aadhaar_card', 'passport_back', 'flight_ticket', 'old_visa', 'passport_front', 'passport_photo', 'hotel_booking'];
         foreach ($fileKeys as $key) {
             if ($request->hasFile($key)) {
                 $filesToAttach[$key] = $request->file($key);

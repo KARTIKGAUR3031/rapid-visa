@@ -21,8 +21,30 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+    <style>
+        body {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .card, .btn {
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover, .btn:hover {
+            transform: scale(1.05);
+        }
+
+        [data-aos] {
+            opacity: 0;
+            transition-property: opacity, transform;
+        }
+    </style>
 
     <style>
         .top-bar {
@@ -637,6 +659,10 @@
                 }
             });
         });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
     </script>
 </body>
 </html>
