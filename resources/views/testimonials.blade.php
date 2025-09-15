@@ -3,7 +3,7 @@
 @section('content')
 <style>
     .hero-section {
-        background: url('{{ asset('img/testimonial.png') }}') no-repeat center center;
+        background: linear-gradient(135deg, rgba(0, 0, 128, 0.25), rgba(65, 105, 225, 0.2)), url('{{ asset('img/testimonial.png') }}') no-repeat center center;
         background-size: cover;
         color: white;
         padding: 100px 0;
@@ -15,90 +15,179 @@
     }
     .hero-section h1 {
         font-size: 3.5rem;
-        font-weight: bold;
+        font-weight: 700;
+        color: #d97706;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     }
     .hero-section p {
         font-size: 1.5rem;
-        color: black;
+        color: #e8f0ff;
+        text-shadow: 0 2px 4px rgba(0, 0, 128, 0.3);
     }
-    .testimonials-section {
-        padding: 80px 0;
+    .rating-section {
         background-color: #f8f9fa;
     }
-    .testimonial-card {
-        background-color: white;
-        border-radius: 10px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        padding: 30px;
-        margin-bottom: 30px;
+    .rating-card {
+        background: linear-gradient(135deg, #ffffff, #f8f9fa);
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 128, 0.1);
+        padding: 20px;
+        text-align: center;
+        margin-bottom: 20px;
+        border: 1px solid rgba(192, 192, 192, 0.2);
+        transition: all 0.4s ease-in-out;
     }
-    .testimonial-card .text-warning {
-        color: #ECAB1D !important;
+    .rating-card img {
+        height: 40px;
+        margin-bottom: 15px;
+    }
+    .rating-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 35px rgba(217, 119, 6, 0.3);
+        filter: brightness(1.1);
+    }
+    .rating-stars {
+        color: #d97706;
+        margin-bottom: 10px;
+    }
+    .testimonial-card {
+        background: linear-gradient(135deg, #ffffff, #f8f9fa);
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 128, 0.1);
+        padding: 30px;
+        margin: 15px;
+        text-align: left;
+        border: 1px solid rgba(192, 192, 192, 0.2);
+        transition: all 0.4s ease-in-out;
+    }
+    .testimonial-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 35px rgba(217, 119, 6, 0.3);
+        filter: brightness(1.1);
+    }
+    .testimonial-card .testimonial-text {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: #555;
+        margin-bottom: 20px;
+    }
+    .testimonial-card .testimonial-author {
+        display: flex;
+        align-items: center;
+    }
+    .testimonial-card .author-img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        margin-right: 15px;
+    }
+    .testimonial-card .author-info h5 {
+        margin: 0;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #333;
+    }
+    .testimonial-card .author-info p {
+        margin: 0;
+        color: #777;
+    }
+    .owl-carousel .owl-nav button.owl-prev,
+    .owl-carousel .owl-nav button.owl-next {
+        font-size: 2rem;
+        color: #f4b11c;
+    }
+    .owl-carousel .owl-dots .owl-dot.active span {
+        background: #f4b11c;
     }
 </style>
 
 <div class="hero-section">
     <div class="container">
-        <h1>⭐ What Our Clients Say</h1>
-        <p>Real Stories. Real Results. Real Trust.</p>
+        <h1 data-aos="fade-up">⭐ What Our Clients Say</h1>
+        <p data-aos="fade-up" data-aos-delay="200">Real Stories. Real Results. Real Trust.</p>
     </div>
 </div>
 
-<div class="testimonials-section">
+<div class="rating-section py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="rating-card">
+                    <img src="{{ asset('img/suplogo/google.png') }}" alt="Google">
+                    <div class="rating-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p>4.5/5.0</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="rating-card">
+                    <img src="{{ asset('img/suplogo/facebook.png') }}" alt="Facebook">
+                    <div class="rating-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <p>4.0/5.0</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="rating-card">
+                    <img src="{{ asset('img/suplogo/trustpilot.png') }}" alt="Trustpilot">
+                    <div class="rating-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p>4.8/5.0</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="rating-card">
+                    <img src="{{ asset('img/suplogo/tripadvisor.png') }}" alt="Tripadvisor">
+                    <div class="rating-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <p>4.0/5.0</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="testimonials-section py-5" data-aos="fade-up">
     <div class="container">
         <div class="text-center mb-5">
+            <h2>💬 Client Testimonials</h2>
             <p>At Rapid Visa, we take pride in helping individuals and families take life-changing steps toward a better future. But don’t just take our word for it—read what our clients have to say about their experience with our team.</p>
         </div>
-        <h2>💬 Client Testimonials</h2>
         <div class="row">
-            <div class="col-md-6">
-                <div class="testimonial-card">
-                    <div class="text-warning my-2">
-                        ★★★★★
+            @foreach($testimonials as $testimonial)
+            <div class="col-md-4 mb-4">
+                <div class="testimonial-card h-100">
+                    <p class="testimonial-text">"{{ $testimonial['quote'] }}"</p>
+                    <div class="testimonial-author">
+                        <img src="{{ asset($testimonial['image']) }}" alt="{{ $testimonial['name'] }}" class="author-img">
+                        <div class="author-info">
+                            <h5>{{ $testimonial['name'] }}</h5>
+                            <p>{{ $testimonial['location'] }}</p>
+                        </div>
                     </div>
-                    <h5>"Professional, Transparent, and Supportive Throughout"</h5>
-                    <p class="card-text fst-italic">"From the very first consultation, I knew I was in good hands. The team was clear about the process, the requirements, and what to expect. They handled everything with professionalism and kept me informed every step of the way. I received my visa faster than I anticipated, and I couldn’t be more grateful!"</p>
-                    <p class="mt-3 mb-0"><strong>— Ahmed K., UAE to Canada</strong></p>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="testimonial-card">
-                    <div class="text-warning my-2">
-                        ★★★★★
-                    </div>
-                    <h5>"I Had Almost Given Up—Then I Found Them"</h5>
-                    <p class="card-text fst-italic">"After two failed attempts with other agencies, I was hesitant to try again. But Rapid Visa was different. They listened carefully, reviewed my case thoroughly, and built a strategy that worked. Thanks to them, I’ve finally started a new chapter in my life abroad."</p>
-                    <p class="mt-3 mb-0"><strong>— Nina D., India to Australia</strong></p>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="testimonial-card">
-                    <div class="text-warning my-2">
-                        ★★★★★
-                    </div>
-                    <h5>"Exceptional Service and Genuine Care"</h5>
-                    <p class="card-text fst-italic">"It wasn’t just about paperwork for them—they actually cared about my journey. The team responded to every question promptly and explained everything clearly. They even supported me after I arrived in my new country. That level of service is rare."</p>
-                    <p class="mt-3 mb-0"><strong>— Michael T., South Africa to UK</strong></p>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="testimonial-card">
-                    <div class="text-warning my-2">
-                        ★★★★★
-                    </div>
-                    <h5>"Highly Recommend for Stress-Free Immigration Support"</h5>
-                    <p class="card-text fst-italic">"Their knowledge of immigration policies is top-notch. They made a complicated process feel easy and stress-free. Everything was handled professionally, and I felt supported the entire time. Thank you for helping me achieve my dream."</p>
-                    <p class="mt-3 mb-0"><strong>— Leila M., Morocco to Germany</strong></p>
-                </div>
-            </div>
-        </div>
-        <div class="text-center mt-5">
-            <h3>🧭 Your Journey Could Be Next</h3>
-            <p>We’ve helped hundreds of clients from around the world successfully move forward with their immigration goals. Whether you're just starting out or have been struggling with the process, we're here to guide you.</p>
-            <p>
-                <strong>Ready to start your journey?</strong>
-                <a href="{{ route('contact') }}">Contact us</a> or <a href="#">Book a free consultation</a> today.
-            </p>
+            @endforeach
         </div>
     </div>
 </div>

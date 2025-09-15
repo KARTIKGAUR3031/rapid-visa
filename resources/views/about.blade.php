@@ -2,12 +2,41 @@
 
 @section('content')
 <style>
+    .hover-section {
+        transition: all 0.3s ease-in-out;
+    }
+    .hover-section:hover {
+         transform: scale(1.05);
+        box-shadow: 0 15px 35px rgba(217, 119, 6, 0.3);
+        filter: brightness(1.1);
+    }
+    .team-member img {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .team-member img:hover {
+        transform: scale(1.1);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    .mission-section img,
+    .vision-section img {
+        transition: transform 0.3s ease;
+    }
+    .mission-section img:hover,
+    .vision-section img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 35px rgba(217, 119, 6, 0.3);
+        filter: brightness(1.1);
+    }
     .feature-item .icon {
         font-size: 3rem;
-        color: #ECAB1D;
+        color: #000080;
+        background: linear-gradient(135deg, #000080, #4169E1);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
     }
     .hero-section {
-        background: url('{{ asset('img/aboutus.png') }}') no-repeat center center;
+        background: linear-gradient(135deg, rgba(0, 0, 128, 0.25), rgba(65, 105, 225, 0.2)), url('{{ asset('img/aboutus.png') }}') no-repeat center center;
         background-size: cover;
         color: white;
         padding: 100px 0;
@@ -19,11 +48,18 @@
     }
     .hero-section h1 {
         font-size: 3.5rem;
-        font-weight: bold;
+        font-weight: 700;
+        color: #ffffff;
+        text-shadow: 0 4px 8px rgba(0, 0, 128, 0.3);
+        background: linear-gradient(135deg, #ffffff, #e8f0ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
     }
     .hero-section p {
         font-size: 1.5rem;
-        color: black;
+        color: #e8f0ff;
+        text-shadow: 0 2px 4px rgba(0, 0, 128, 0.3);
     }
     .mission-section {
         padding: 80px 0 0;
@@ -49,6 +85,10 @@
         padding: 80px 0;
         background-color: #f8f9fa;
     }
+    .why-choose-us-section:hover,
+    .why-choose-us-section + .hover-section:hover {
+        background-color: #f1f1f1;
+    }
     .feature-item {
         text-align: center;
         padding: 30px;
@@ -58,23 +98,25 @@
         transition: transform 0.3s;
     }
     .feature-item:hover {
-        transform: translateY(-10px);
+        transform: scale(1.05);
+        box-shadow: 0 15px 35px rgba(217, 119, 6, 0.3);
+        filter: brightness(1.1);
     }
     .feature-item .icon {
         font-size: 3rem;
-        color: #ECAB1D;
+        color: #d97706;
         margin-bottom: 20px;
     }
 </style>
 
 <div class="hero-section">
     <div class="container">
-        <h2>About Us</h2>
-        <p>Your Trusted Partner in Immigration</p>
+        <h2 data-aos="fade-up">About Us</h2>
+        <p data-aos="fade-up" data-aos-delay="200">Your Trusted Partner in Immigration</p>
     </div>
 </div>
 
-<div class="container py-5">
+<div class="container py-5 hover-section" data-aos="fade-up">
     <div class="row">
         <div class="col-md-6">
             <img src="{{ asset('img/image-05.png') }}" alt="About Us" class="img-fluid rounded">
@@ -88,7 +130,7 @@
     </div>
 </div>
 
-<div class="mission-section">
+<div class="mission-section hover-section" data-aos="fade-right">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-6">
@@ -107,23 +149,21 @@
 <p>Through a combination of technology, expertise, and human support, we strive to remove the stress and uncertainty from the immigration journey.</p>
             </div>
             <div class="col-md-6">
-                <img src="{{ asset('img/mission.png') }}" alt="Our Mission" class="img-fluid rounded">
+                <img src="{{ asset('img/mission.png') }}" alt="Our Mission" class="img-fluid rounded" data-aos="fade-left">
             </div>
         </div>
     </div>
 </div>
 
-<div class="vision-section">
+<div class="vision-section hover-section" data-aos="fade-up">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-6">
-                <img src="{{ asset('img/vision.png') }}" alt="Our Vision" class="img-fluid rounded">
+                <img src="{{ asset('img/vision.png') }}" alt="Our Vision" class="img-fluid rounded" data-aos="fade-right">
             </div>
             <div class="col-md-6">
                 <h2>Our Vision</h2>
                 <p>At Rapid Visa, we envision a world where borders do not limit potential—where people from all walks of life can access global opportunities with dignity, fairness, and support.</p>
-<p>We aim to be more than just a visa consultancy—we strive to become a global leader in immigration solutions, known for our integrity, innovation, and human-centered approach. Our vision is to redefine the immigration experience by making it simpler, smarter, and more compassionate for individuals and families seeking a new beginning.</p>
-<p>We aspire to:</p>
 <ul>
     <li><strong>🌍 Empower Global Mobility:</strong> Create seamless pathways for people to live, work, and thrive in new countries, without being overwhelmed by bureaucracy or uncertainty.</li>
     <li><strong>💼 Set the Standard in Service:</strong> Become the most trusted name in immigration consultancy by consistently delivering exceptional service, accurate advice, and successful outcomes.</li>
@@ -138,42 +178,60 @@
     </div>
 </div>
 
-<div class="container py-5">
-    <div class="text-center mb-5">
-    <h2>What We Do</h2>
-</div>
-    <p>We offer a wide range of immigration and visa-related services, including:</p>
-    <ul>
-        <li>Visa consultation and eligibility assessment</li>
-        <li>Document preparation and application support</li>
-        <li>Legal guidance and compliance</li>
-        <li>Case monitoring and status updates</li>
-        <li>Appeals and follow-up services (if required)</li>
-    </ul>
-    <p>Every case is different, and that’s why we take a personalized approach—developing a strategy that fits your needs, background, and destination.</p>
-</div>
-
-<div class="why-choose-us-section">
-    <div class="container">
-        <div class="text-center mb-5">
-            <h2>Why Choose Us</h2>
+<div class="container py-5 hover-section" data-aos="fade-up">
+    <div class="row align-items-center">
+        <div class="col-md-6">
+            <img src="https://st2.depositphotos.com/1092019/9700/i/450/depositphotos_97006952-stock-illustration-what-we-do-on-white.jpg" alt="What We Do" class="img-fluid rounded" data-aos="fade-right">
         </div>
-        <ul>
-            <li>✅ Experienced and Knowledgeable Team</li>
-            <li>✅ Clear, Honest Communication</li>
-            <li>✅ Tailored Solutions for Every Client</li>
-            <li>✅ Up-to-Date Legal Guidance</li>
-            <li>✅ Efficient and Confidential Process Handling</li>
-        </ul>
-        <p>We don’t just process applications—we build lasting relationships and help people take meaningful steps toward a better future.</p>
+        <div class="col-md-6">
+            <div class="text-center mb-5">
+                <h2>What We Do</h2>
+            </div>
+            <p>At our core, we provide complete visa and immigration solutions designed to make international travel easier, safer, and stress-free. We help you with everything from visa applications and document verification to flight bookings and consultation services.</p>
+            <p>Our goal is to eliminate the confusion and delays that often come with immigration processes. Whether you are applying for a student visa, work visa, tourist visa, or family visa, we provide accurate guidance and step-by-step support. We also assist with travel planning, offering affordable flight booking options that align with your visa approval and travel schedule.</p>
+            <p>By combining expert knowledge with personalized service, we ensure that your journey abroad begins on the right note.</p>
+        </div>
     </div>
 </div>
 
-<div class="container py-5">
-    <div class="text-center mb-5">
-    <h2>Our Commitment</h2>
+<div class="why-choose-us-section hover-section" data-aos="fade-up">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <div class="text-center mb-5">
+                    <h2>Why Choose Us</h2>
+                </div>
+                <p>When it comes to something as important as your travel and immigration, choosing the right partner makes all the difference. Here’s why thousands of clients trust us:</p>
+                <p>✅ Proven Expertise: With years of experience in global immigration, our visa consultants have a deep understanding of requirements and approval trends.</p>
+                <p>✅ Tailored Solutions: We don’t believe in one-size-fits-all. Every case is unique, and we provide solutions that match your personal, educational, or professional needs.</p>
+                <p>✅ Fast &amp; Hassle-Free: We streamline the process so you can save time and avoid unnecessary delays.</p>
+                <p>✅ End-to-End Assistance: From the moment you start your application until you land at your destination, we stand by you at every step.</p>
+                <p>✅ Transparent Pricing: No hidden costs—just clear, affordable services you can trust.</p>
+                <p>With us, you are not just a client—you are a partner. Your success is our priority, and we go above and beyond to make your travel goals a reality.</p>
+            </div>
+            <div class="col-md-6">
+                <img src="https://img.freepik.com/premium-photo/why-choose-us_220873-5582.jpg?semt=ais_hybrid&w=740&q=80" alt="Why Choose Us" class="img-fluid rounded" data-aos="fade-left">
+            </div>
+        </div>
+    </div>
 </div>
-    <p>We are committed to making the immigration journey smoother, faster, and more accessible for everyone. From your first consultation to the final decision, we offer honest advice, responsive support, and expert service at every stage.</p>
-    <p>Let us help you move forward—one step, one document, one decision at a time.</p>
+
+<div class="container py-5 hover-section" data-aos="fade-up">
+    <div class="row align-items-center">
+        <div class="col-md-6">
+            <div class="text-center mb-5">
+                <h2>Our Commitment</h2>
+            </div>
+            <p>We understand that applying for a visa and planning international travel is more than just paperwork—it’s about dreams, opportunities, and new beginnings. That’s why we are committed to:</p>
+            <p>🔹 Client-Centered Service: Putting your needs, goals, and timeline first.</p>
+            <p>🔹 Integrity &amp; Transparency: Honest advice and clear communication, always.</p>
+            <p>🔹 Excellence in Service: Delivering high-quality, professional assistance backed by proven results.</p>
+            <p>🔹 Long-Term Support: We don’t stop at visa approval—we also help with travel bookings, follow-ups, and guidance for future needs.</p>
+            <p>Our mission is to make your immigration journey smooth, stress-free, and successful—because your future deserves nothing less.</p>
+        </div>
+        <div class="col-md-6">
+            <img src="https://t4.ftcdn.net/jpg/00/85/81/99/360_F_85819931_AaN7e7KydNChqV0e0gUu4B9bBSLKJGrK.jpg" alt="Our Commitment" class="img-fluid rounded" data-aos="fade-left">
+        </div>
+    </div>
 </div>
 @endsection

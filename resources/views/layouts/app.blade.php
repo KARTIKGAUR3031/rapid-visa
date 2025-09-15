@@ -6,52 +6,24 @@
 
     <link rel="icon" href="{{ asset('img/favicon.ico') }}" type="image/x-icon">
 
-    <script src='https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js'></script>
-
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-
-    <style>
-        body {
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        .card, .btn {
-            transition: transform 0.3s ease;
-        }
-
-        .card:hover, .btn:hover {
-            transform: scale(1.05);
-        }
-
-        [data-aos] {
-            opacity: 0;
-            transition-property: opacity, transform;
-        }
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 
     <style>
         .top-bar {
-            background-color: #000;
+            background: linear-gradient(135deg, #000080, #4169E1);
             padding: 0.5rem 0;
             font-size: 0.875rem;
-            color: #fff;
+            color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 128, 0.2);
         }
 
         .top-bar .contact-info,
@@ -77,16 +49,21 @@
         }
 
         .top-bar .social-media a:hover {
-            color: #ECAB1D;
+            color: #d97706;
             transform: translateY(-2px);
         }
 
+        
+
+
+
         .main-header {
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(135deg, #ffffff, #f8f9fa);
+            box-shadow: 0 4px 20px rgba(0, 0, 128, 0.1);
             position: sticky;
             top: 0;
             z-index: 1020;
+            border-bottom: 1px solid rgba(192, 192, 192, 0.2);
         }
 
         .main-header .navbar-brand img {
@@ -94,53 +71,86 @@
         }
 
         .main-header .nav-link {
-            color: #000;
-            font-weight: 500;
+            color: #4A4A4A;
+            font-weight: 600;
             transition: all 0.3s ease-in-out;
+            position: relative;
+        }
+
+        .main-header .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #d97706, #f59e0b);
+            transition: width 0.3s ease;
         }
 
         .main-header .nav-link:hover {
-            color: #ECAB1D;
+            color: #d97706;
+            background-color: rgba(217, 119, 6, 0.1);
+            border-radius: 4px;
+        }
+
+        .main-header .nav-link:hover::after {
+            width: 100%;
         }
 
         .main-header .btn-warning {
-            background-color: #ECAB1D;
-            color: #000;
-            font-weight: bold;
+            background: linear-gradient(135deg, #d97706, #f59e0b);
+            color: #ffffff;
+            font-weight: 600;
+            border: none;
             transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3);
         }
 
         .main-header .btn-warning:hover {
-            background-color: #000;
-            color: #fff;
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(217, 119, 6, 0.4);
         }
         h1, h2, h3, h4, h5, h6 {
-            color: #ECAB1D;
-            font-weight: bold;
+            color: #4A4A4A;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+        }
+
+        h1 {
+            background: linear-gradient(135deg, #000080, #4169E1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         .card {
-            transition: all 0.3s ease-in-out;
+            transition: all 0.4s ease-in-out;
+            border: 1px solid rgba(192, 192, 192, 0.2);
+            background: linear-gradient(135deg, #ffffff, #f8f9fa);
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 12px 30px rgba(0, 0, 128, 0.15) !important;
+            background: linear-gradient(135deg, #ffffff, #e8f0ff);
+            border-color: rgba(65, 105, 225, 0.3);
         }
         .hero-section {
-            background-image: url("{{ asset('img/slider1.webp') }}");
-            background-size: cover;
-            background-position: center;
-            color: #fff;
-            padding: 10rem 0;
+            background-color: #f8f9fa;
+            padding: 100px 0;
         }
 
         .hero-section h1 {
-            font-size: 3.5rem;
-            font-weight: bold;
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
         }
 
         .hero-section p {
-            font-size: 1.25rem;
+            font-size: 20px;
+            margin-bottom: 30px;
         }
 
         .search-form {
@@ -155,7 +165,7 @@
         }
 
         .search-form .nav-tabs .nav-link.active {
-            background-color: #ECAB1D;
+            background-color: #d97706;
             color: #000;
             font-weight: bold;
         }
@@ -165,7 +175,7 @@
         }
 
         .search-form .btn {
-            background-color: #ECAB1D;
+            background-color: #d97706;
             color: #000;
             font-weight: bold;
             width: 100%;
@@ -180,9 +190,14 @@
             padding: 2rem;
             border-radius: 0.5rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: left;
+            text-align: center;
             margin-bottom: 2rem;
             transition: all 0.3s ease-in-out;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
 
         .service-item p {
@@ -196,7 +211,7 @@
 
         .service-item .icon {
             font-size: 3rem;
-            color: #ECAB1D;
+            color: #d97706;
             margin-bottom: 1rem;
         }
 
@@ -213,11 +228,17 @@
             display: flex;
             align-items: flex-start;
             margin-bottom: 2rem;
+            transition: all 0.3s ease-in-out;
+
+        }
+
+        .feature-item:hover {
+            transform: translateX(10px);
         }
 
         .feature-item .icon {
             font-size: 1.5rem;
-            color: #ECAB1D;
+            color: #d97706;
             margin-right: 1rem;
         }
 
@@ -248,7 +269,7 @@
 
         .program-item .icon {
             font-size: 3rem;
-            color: #ECAB1D;
+            color: #d97706;
             margin-bottom: 1rem;
         }
 
@@ -258,41 +279,52 @@
         }
 
         .testimonials-section {
-            background-color: #fff;
-            padding: 4rem 0;
-        }
-
-        .testimonial-item {
             background-color: #f8f9fa;
-            padding: 2rem;
-            border-radius: 0.5rem;
-            margin-bottom: 2rem;
+            padding: 50px 0;
         }
-
-        .testimonial-content p {
+        .testimonial-slider .testimonial-item {
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+        .testimonial-quote-icon {
+            font-size: 30px;
+            color: #d97706;
+            margin-bottom: 20px;
+        }
+        .testimonial-text {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #666;
             font-style: italic;
         }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            margin-top: 1.5rem;
-        }
-
-        .testimonial-author img {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            margin-right: 1rem;
-        }
-
-        .testimonial-author h4 {
+        .testimonial-author .author-name {
+            font-size: 18px;
             font-weight: bold;
-            margin-bottom: 0.25rem;
+            color: #333;
+            margin-top: 20px;
+            margin-bottom: 5px;
         }
-
-        .testimonial-author span {
-            color: #6c757d;
+        .testimonial-author .author-location {
+            font-size: 14px;
+            color: #888;
+        }
+        .owl-dots {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .owl-dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background: #ddd;
+            border-radius: 50%;
+            margin: 0 5px;
+            transition: background 0.3s;
+        }
+        .owl-dot.active {
+            background: #d97706;
         }
 
         .recent-news-section {
@@ -335,7 +367,7 @@
         }
 
         .news-content .read-more {
-            color: #ECAB1D;
+            color: #d97706;
             font-weight: bold;
             text-decoration: none;
         }
@@ -389,10 +421,10 @@
         }
 
         .footer {
-            background-color: #000;
+            background-color: #ffffff;
             background-size: cover;
             background-position: center;
-            color: #fff;
+            color: #000000;
         }
 
         .footer h5 {
@@ -401,7 +433,8 @@
         }
 
         .footer p {
-            color: #ccc;
+            color: #000000;
+            font-weight: bold;
         }
 
         .footer .social-icons a {
@@ -412,7 +445,7 @@
         }
 
         .footer .social-icons a:hover {
-            color: #ECAB1D;
+            color: #d97706;
             transform: translateY(-2px);
         }
 
@@ -440,8 +473,8 @@
         }
 
         .footer .btn-warning {
-            background-color: #ECAB1D;
-            border-color: #ECAB1D;
+            background-color: #d97706;
+            border-color: #d97706;
             color: #000;
             font-weight: bold;
         }
@@ -452,7 +485,55 @@
 
         .footer-bottom p {
             margin-bottom: 0;
-            color: #ccc;
+            color: #ffffffff;
+        }
+
+        .hero-slider .hero-item {
+            height: 80vh;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            color: #fff;
+        }
+
+        .hero-slider .owl-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: space-between;
+            padding: 0 2rem;
+        }
+
+        .hero-slider .owl-nav button {
+            background: rgba(0,0,0,0.5) !important;
+            color: #fff !important;
+            width: 50px;
+            height: 50px;
+            border-radius: 50% !important;
+            font-size: 2rem !important;
+        }
+
+        .hero-slider .owl-dots {
+            position: absolute;
+            bottom: 2rem;
+            width: 100%;
+            text-align: center;
+        }
+
+        .hero-slider .owl-dots .owl-dot {
+            width: 12px;
+            height: 12px;
+            background: #fff !important;
+            border-radius: 50%;
+            margin: 0 5px;
+            opacity: 0.7;
+        }
+
+        .hero-slider .owl-dots .owl-dot.active {
+            opacity: 1;
         }
     </style>
 </head>
@@ -522,6 +603,9 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('dashboard') }}">
+                                        {{ __('Dashboard') }}
+                                    </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -573,53 +657,57 @@
                 <div class="row">
                     <div class="col-md-4 mb-4">
                         <img src="{{ asset('img/logo.png') }}" alt="Rapid Visa Logo" style="height: 100px; margin-bottom: 1rem;">
-                        <p>Your trusted partner for visa solutions. From application to approval, we handle every step with professionalism and care, making your travel and immigration process stress-free.</p>
+                        <p style="background: linear-gradient(135deg, #d97706, #ffa500); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;">Your trusted partner for visa solutions. From application to approval, we handle every step with professionalism and care, making your travel and immigration process stress-free.</p>
                         <div class="social-icons mt-4">
-                            <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="text-white me-3"><i class="fab fa-google-plus-g"></i></a>
-                            <a href="#" class="text-white me-3"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="me-3" style="background: linear-gradient(135deg, #d97706, #ffa500); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="me-3" style="background: linear-gradient(135deg, #d97706, #ffa500); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="me-3" style="background: linear-gradient(135deg, #d97706, #ffa500); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"><i class="fab fa-google-plus-g"></i></a>
+                            <a href="#" class="me-3" style="background: linear-gradient(135deg, #d97706, #ffa500); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
                         <h5>Contact Us</h5>
                         <ul class="list-unstyled">
                             <li class="d-flex align-items-start mb-3">
-                                <i class="fas fa-map-marker-alt me-3 mt-1"></i>
-                                <span>Office 603, 06th Floor Umm Al Quwain Bank Building, <br> Bank Street, Bur Dubai. Dubai, P.O.BOX : 243173, Dubai, UAE</span>
+                                <i class="fas fa-map-marker-alt me-3 mt-1" style="background: linear-gradient(135deg, #d97706, #ffa500); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"></i>
+                                <span style="background: linear-gradient(135deg, #d97706, #ffa500); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;">Office 603, 06th Floor Umm Al Quwain Bank Building, <br> Bank Street, Bur Dubai. Dubai, P.O.BOX : 243173, Dubai, UAE</span>
                             </li>
                             <li class="d-flex align-items-start mb-3">
-                                <i class="fas fa-phone me-3 mt-1"></i>
-                                <span> +971-56-939-8472</span>
+                                <i class="fas fa-phone me-3 mt-1" style="background: linear-gradient(135deg, #d97706, #ffa500); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"></i>
+                                <span style="background: linear-gradient(135deg, #d97706, #ffa500); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;"> +971-56-939-8472</span>
                             </li><li class="d-flex align-items-start mb-3">
-                                <i class="fas fa-phone me-3 mt-1"></i>
-                                <span> +971-4-265-4627</span>
+                                <i class="fas fa-phone me-3 mt-1" style="background: linear-gradient(135deg, #d97706, #ffa500); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"></i>
+                                <span style="background: linear-gradient(135deg, #d97706, #ffa500); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;"> +971-4-265-4627</span>
                             </li>
                             <li class="d-flex align-items-start">
-                                <i class="fas fa-envelope me-3 mt-1"></i>
-                                <span>info@wahegurutravels.com</span>
+                                <i class="fas fa-envelope me-3 mt-1" style="background: linear-gradient(135deg, #d97706, #ffa500); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"></i>
+                                <span style="background: linear-gradient(135deg, #d97706, #ffa500); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;">info@wahegurutravels.com</span>
                             </li>
                         </ul>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <h5>Subscribe</h5>
-                        <p>Subscribe to our newsletter for the latest updates.</p>
+                        <h5 style="background: linear-gradient(135deg, #000000, #000000); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: bold;">Subscribe</h5>
+                        <p style="background: linear-gradient(135deg, #d97706, #ffa500); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;">Subscribe to our newsletter for the latest updates.</p>
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Your Email">
+                            <input type="text" class="form-control" placeholder="Your Email" style="background: linear-gradient(135deg, #d97706, #ffa500); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
                             <button class="btn btn-warning" type="button">Subscribe</button>
                         </div>
-                        <small>We never share your email with anyone else.</small>
+                        <small style="background: linear-gradient(135deg, #d97706, #ffa500); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">We never share your email with anyone else.</small>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom text-center py-3" style="background-color: #1a1a1a;">
-                <p class="mb-0">&copy; 2025 Rapid Visa. All Rights Reserved.</p>
+            <div class="footer-bottom text-center py-3" style="background: linear-gradient(135deg, #000080, #4169E1);">
+                <p class="mb-0" style="background: linear-gradient(135deg, #d97706, #ffa500); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600; font-size: 1.1rem;">&copy; 2025 Rapid Visa | All Rights Reserved. | &copy; Developed By wahegurutravels.com</p>
             </div>
         </footer>
     </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        AOS.init();
         $(document).ready(function(){
             $(".visa-carousel").owlCarousel({
                 loop:true,
@@ -658,11 +746,28 @@
                     }
                 }
             });
+
+            $(".testimonial-slider").owlCarousel({
+                items: 1,
+                loop: true,
+                nav: false,
+                dots: true,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                smartSpeed: 450,
+            });
+
+            $(".hero-slider").owlCarousel({
+                items: 1,
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                smartSpeed: 1500,
+                nav: false,
+                dots: true
+            });
         });
     </script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
+    @stack('scripts')
 </body>
 </html>

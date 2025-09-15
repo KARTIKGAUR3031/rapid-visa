@@ -33,6 +33,7 @@ class VisaApplicationController extends Controller
                 'gender' => 'required|string',
                 'phone_number' => 'required|string|max:20',
                 'date_of_birth' => 'required|date',
+                'nationality' => 'required|string|max:255',
                 'passport_number' => 'required|string|max:255',
                 'passport_valid_till' => 'required|date',
                 'passport_place_of_issue' => 'required|string|max:255',
@@ -44,6 +45,7 @@ class VisaApplicationController extends Controller
                 'passport_photo' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:2048',
                 'hotel_booking' => 'required|file|mimes:jpg,jpeg,png,pdf|max:2048',
                 'country' => 'required|string',
+                'image' => 'required|string',
             ]);
         } catch (ValidationException $e) {
             Log::error('Validation failed: ' . $e->getMessage());
@@ -81,7 +83,7 @@ class VisaApplicationController extends Controller
             Log::info('Attempting to send visa application email.');
             Log::info('Data: ' . print_r($data, true));
             Log::info('Files: ' . print_r(array_keys($filesToAttach), true));
-            Mail::to('kartiksharma10000@gmail.com')->cc($data['email'])->send(new VisaApplicationMail($data, $filesToAttach));
+            Mail::to(env('ADMIN_EMAIL'))->cc($data['email'])->send(new VisaApplicationMail($data, $filesToAttach));
             Log::info('Visa application email sent successfully.');
         } catch (\Exception $e) {
             Log::error('Failed to send visa application email: ' . $e);

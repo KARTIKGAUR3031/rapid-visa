@@ -22,8 +22,14 @@ use App\Http\Controllers\OcrController;
 
 Route::post('/ocr/upload', [OcrController::class, 'upload'])->name('ocr.upload');
 
+use App\Http\Controllers\UserDashboardController;
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', [UserDashboardController::class, 'index'])->name('user.dashboard');
+});
+
 Route::get('/', function () {
-    return view('home');
+    return view('welcome');
 });
 
 Auth::routes();
@@ -31,8 +37,10 @@ Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::view('/visas', 'visas')->name('visas');
+use App\Http\Controllers\TestimonialController;
+
 Route::view('/pricing', 'pricing')->name('pricing');
-Route::view('/testimonials', 'testimonials')->name('testimonials');
+Route::get('/testimonials', [TestimonialController::class, 'index'])->name('testimonials');
 Route::view('/about', 'about')->name('about');
 
 Route::view('/careers', 'careers')->name('careers');
