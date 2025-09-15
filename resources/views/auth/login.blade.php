@@ -13,8 +13,8 @@
         border-radius: 1rem;
     }
     .btn-primary {
-        background-color: #d97706 !important;
-        border-color: #d97706 !important;
+        background-color: #ee9734ff !important;
+        border-color: #ee9734ff !important;
     }
 </style>
 <div class="container-fluid my-5">

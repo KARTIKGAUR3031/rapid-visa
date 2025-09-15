@@ -3,7 +3,7 @@
 @section('content')
 <style>
     .hero-section {
-        background: linear-gradient(135deg, rgba(0, 0, 128, 0.25), rgba(65, 105, 225, 0.2)), url('{{ asset('img/contactus.png') }}') no-repeat center center;
+        background: url('{{ asset('img/contactus.png') }}') no-repeat center center;
         background-size: cover;
         color: white;
         padding: 100px 0;
@@ -17,16 +17,12 @@
         font-size: 3.5rem;
         font-weight: 700;
         color: #ffffff;
-        text-shadow: 0 4px 8px rgba(0, 0, 128, 0.3);
-        background: linear-gradient(135deg, #ffffff, #e8f0ff);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+        
     }
     .hero-section p {
         font-size: 1.5rem;
-        color: #e8f0ff;
-        text-shadow: 0 2px 4px rgba(0, 0, 128, 0.3);
+        color: #ffffff;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     }
     .contact-form-section {
         padding: 80px 0;

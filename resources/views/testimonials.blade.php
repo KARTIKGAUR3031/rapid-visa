@@ -3,7 +3,7 @@
 @section('content')
 <style>
     .hero-section {
-        background: linear-gradient(135deg, rgba(0, 0, 128, 0.25), rgba(65, 105, 225, 0.2)), url('{{ asset('img/testimonial.png') }}') no-repeat center center;
+        background: url('{{ asset('img/testimonial.png') }}') no-repeat center center;
         background-size: cover;
         color: white;
         padding: 100px 0;
@@ -16,13 +16,13 @@
     .hero-section h1 {
         font-size: 3.5rem;
         font-weight: 700;
-        color: #d97706;
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        color: #ffffff;
+        
     }
     .hero-section p {
         font-size: 1.5rem;
-        color: #e8f0ff;
-        text-shadow: 0 2px 4px rgba(0, 0, 128, 0.3);
+        color: #ffffff;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     }
     .rating-section {
         background-color: #f8f9fa;
@@ -47,7 +47,7 @@
         filter: brightness(1.1);
     }
     .rating-stars {
-        color: #d97706;
+        color: #f4b11c;
         margin-bottom: 10px;
     }
     .testimonial-card {
@@ -103,7 +103,7 @@
 
 <div class="hero-section">
     <div class="container">
-        <h1 data-aos="fade-up">⭐ What Our Clients Say</h1>
+        <h1 data-aos="fade-up" color="#f4b11c">⭐ What Our Clients Say</h1>
         <p data-aos="fade-up" data-aos-delay="200">Real Stories. Real Results. Real Trust.</p>
     </div>
 </div>

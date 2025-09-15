@@ -19,7 +19,7 @@
 
     <style>
         .top-bar {
-            background: linear-gradient(135deg, #000080, #4169E1);
+            background: linear-gradient(135deg, #d65656ff, #eea334ff);
             padding: 0.5rem 0;
             font-size: 0.875rem;
             color: #ffffff;
@@ -49,7 +49,7 @@
         }
 
         .top-bar .social-media a:hover {
-            color: #d97706;
+            color: #ee9734ff;
             transform: translateY(-2px);
         }
 
@@ -84,12 +84,12 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: linear-gradient(135deg, #d97706, #f59e0b);
+            background: linear-gradient(135deg, #ee9734ff, #f59e0b);
             transition: width 0.3s ease;
         }
 
         .main-header .nav-link:hover {
-            color: #d97706;
+            color: #ee9734ff;
             background-color: rgba(217, 119, 6, 0.1);
             border-radius: 4px;
         }
@@ -99,7 +99,7 @@
         }
 
         .main-header .btn-warning {
-            background: linear-gradient(135deg, #d97706, #f59e0b);
+            background: linear-gradient(135deg, #ee9734ff, #f59e0b);
             color: #ffffff;
             font-weight: 600;
             border: none;
@@ -108,19 +108,19 @@
         }
 
         .main-header .btn-warning:hover {
-            background: linear-gradient(135deg, #f59e0b, #d97706);
+            background: linear-gradient(135deg, #f59e0b, #ee9734ff);
             color: #ffffff;
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(217, 119, 6, 0.4);
         }
         h1, h2, h3, h4, h5, h6 {
-            color: #4A4A4A;
+            color:  #f59e0b;
             font-weight: 700;
             font-family: 'Inter', sans-serif;
         }
 
         h1 {
-            background: linear-gradient(135deg, #000080, #4169E1);
+            background: linear-gradient(135deg, #f59e0b, #ee9734ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -165,7 +165,7 @@
         }
 
         .search-form .nav-tabs .nav-link.active {
-            background-color: #d97706;
+            background-color: #ee9734ff;
             color: #000;
             font-weight: bold;
         }
@@ -175,7 +175,7 @@
         }
 
         .search-form .btn {
-            background-color: #d97706;
+            background-color: #ee9734ff;
             color: #000;
             font-weight: bold;
             width: 100%;
@@ -211,7 +211,7 @@
 
         .service-item .icon {
             font-size: 3rem;
-            color: #d97706;
+            color: #ee9734ff;
             margin-bottom: 1rem;
         }
 
@@ -238,7 +238,7 @@
 
         .feature-item .icon {
             font-size: 1.5rem;
-            color: #d97706;
+            color: #ee9734ff;
             margin-right: 1rem;
         }
 
@@ -269,7 +269,7 @@
 
         .program-item .icon {
             font-size: 3rem;
-            color: #d97706;
+            color: #ee9734ff;
             margin-bottom: 1rem;
         }
 
@@ -290,7 +290,7 @@
         }
         .testimonial-quote-icon {
             font-size: 30px;
-            color: #d97706;
+            color: #ee9734ff;
             margin-bottom: 20px;
         }
         .testimonial-text {
@@ -324,7 +324,7 @@
             transition: background 0.3s;
         }
         .owl-dot.active {
-            background: #d97706;
+            background: #ee9734ff;
         }
 
         .recent-news-section {
@@ -367,7 +367,7 @@
         }
 
         .news-content .read-more {
-            color: #d97706;
+            color: #ee9734ff;
             font-weight: bold;
             text-decoration: none;
         }
@@ -421,7 +421,7 @@
         }
 
         .footer {
-            background-color: #ffffff;
+            background-color: linear-gradient(135deg, #d65656ff, #eeeb34ff)
             background-size: cover;
             background-position: center;
             color: #000000;
@@ -445,7 +445,7 @@
         }
 
         .footer .social-icons a:hover {
-            color: #d97706;
+            color: #ee9734ff;
             transform: translateY(-2px);
         }
 
@@ -473,9 +473,9 @@
         }
 
         .footer .btn-warning {
-            background-color: #d97706;
-            border-color: #d97706;
-            color: #000;
+            background: linear-gradient(135deg, #000080, #4169E1);
+            border-color: #000000;
+            color: #ffffff;
             font-weight: bold;
         }
 
@@ -652,52 +652,52 @@
             @yield('content')
         </main>
 
-        <footer class="footer" style="background-image: url('https://jthemes.net/themes/wp/Rapid Visa/wp-content/uploads/2019/03/footer-bg.jpg'); color: #fff;">
+        <footer class="footer" style="background-image: url('https://jthemes.net/themes/wp/Rapid Visa/wp-content/uploads/2019/03/footer-bg.jpg');">
             <div class="container py-5">
                 <div class="row">
                     <div class="col-md-4 mb-4">
                         <img src="{{ asset('img/logo.png') }}" alt="Rapid Visa Logo" style="height: 100px; margin-bottom: 1rem;">
-                        <p style="background: linear-gradient(135deg, #d97706, #ffa500); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;">Your trusted partner for visa solutions. From application to approval, we handle every step with professionalism and care, making your travel and immigration process stress-free.</p>
+                        <p style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;">Your trusted partner for visa solutions. From application to approval, we handle every step with professionalism and care, making your travel and immigration process stress-free.</p>
                         <div class="social-icons mt-4">
-                            <a href="#" class="me-3" style="background: linear-gradient(135deg, #d97706, #ffa500); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="me-3" style="background: linear-gradient(135deg, #d97706, #ffa500); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="me-3" style="background: linear-gradient(135deg, #d97706, #ffa500); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"><i class="fab fa-google-plus-g"></i></a>
-                            <a href="#" class="me-3" style="background: linear-gradient(135deg, #d97706, #ffa500); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="me-3" style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="me-3" style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="me-3" style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"><i class="fab fa-google-plus-g"></i></a>
+                            <a href="#" class="me-3" style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <h5>Contact Us</h5>
+                        <h5 style="background: linear-gradient(135deg, #000000, #000000); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: bold;">Contact Us</h5>
                         <ul class="list-unstyled">
                             <li class="d-flex align-items-start mb-3">
-                                <i class="fas fa-map-marker-alt me-3 mt-1" style="background: linear-gradient(135deg, #d97706, #ffa500); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"></i>
-                                <span style="background: linear-gradient(135deg, #d97706, #ffa500); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;">Office 603, 06th Floor Umm Al Quwain Bank Building, <br> Bank Street, Bur Dubai. Dubai, P.O.BOX : 243173, Dubai, UAE</span>
+                                <i class="fas fa-map-marker-alt me-3 mt-1" style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"></i>
+                                <span style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;">Office 603, 06th Floor Umm Al Quwain Bank Building, <br> Bank Street, Bur Dubai. Dubai, P.O.BOX : 243173, Dubai, UAE</span>
                             </li>
                             <li class="d-flex align-items-start mb-3">
-                                <i class="fas fa-phone me-3 mt-1" style="background: linear-gradient(135deg, #d97706, #ffa500); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"></i>
-                                <span style="background: linear-gradient(135deg, #d97706, #ffa500); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;"> +971-56-939-8472</span>
+                                <i class="fas fa-phone me-3 mt-1" style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"></i>
+                                <span style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;"> +971-56-939-8472</span>
                             </li><li class="d-flex align-items-start mb-3">
-                                <i class="fas fa-phone me-3 mt-1" style="background: linear-gradient(135deg, #d97706, #ffa500); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"></i>
-                                <span style="background: linear-gradient(135deg, #d97706, #ffa500); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;"> +971-4-265-4627</span>
+                                <i class="fas fa-phone me-3 mt-1" style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"></i>
+                                <span style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;"> +971-4-265-4627</span>
                             </li>
                             <li class="d-flex align-items-start">
-                                <i class="fas fa-envelope me-3 mt-1" style="background: linear-gradient(135deg, #d97706, #ffa500); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"></i>
-                                <span style="background: linear-gradient(135deg, #d97706, #ffa500); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;">info@wahegurutravels.com</span>
+                                <i class="fas fa-envelope me-3 mt-1" style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"></i>
+                                <span style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;">info@wahegurutravels.com</span>
                             </li>
                         </ul>
                     </div>
                     <div class="col-md-4 mb-4">
                         <h5 style="background: linear-gradient(135deg, #000000, #000000); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: bold;">Subscribe</h5>
-                        <p style="background: linear-gradient(135deg, #d97706, #ffa500); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;">Subscribe to our newsletter for the latest updates.</p>
+                        <p style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;">Subscribe to our newsletter for the latest updates.</p>
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Your Email" style="background: linear-gradient(135deg, #d97706, #ffa500); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                            <input type="text" class="form-control" placeholder="Your Email" style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
                             <button class="btn btn-warning" type="button">Subscribe</button>
                         </div>
-                        <small style="background: linear-gradient(135deg, #d97706, #ffa500); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">We never share your email with anyone else.</small>
+                        <small style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">We never share your email with anyone else.</small>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom text-center py-3" style="background: linear-gradient(135deg, #000080, #4169E1);">
-                <p class="mb-0" style="background: linear-gradient(135deg, #d97706, #ffa500); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600; font-size: 1.1rem;">&copy; 2025 Rapid Visa | All Rights Reserved. | &copy; Developed By wahegurutravels.com</p>
+                <p class="mb-0" style="background: #ffffff; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600; font-size: 1.1rem;">&copy; 2025 Rapid Visa | All Rights Reserved. | &copy; Developed By wahegurutravels.com</p>
             </div>
         </footer>
     </div>

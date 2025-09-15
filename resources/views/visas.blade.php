@@ -3,8 +3,8 @@
 @section('content')
 <style>
     .btn-primary {
-        background-color: #d97706 !important;
-        border-color: #d97706 !important;
+        background-color: #ee9734ff !important;
+        border-color: #ee9734ff !important;
     }
     .card {
         transition: all 0.3s ease-in-out;
@@ -99,7 +99,7 @@
                                         <div class="card-body d-flex flex-column">
                                             <h5 class="card-title">Turkey</h5>
                                             <p class="card-text">Apply for your Turkey visa online. Get your visa in 24 hours.</p>
-                                            <a href="{{ route('visa.show', ['country' => 'Turkey', 'image' => 'https://images.unsplash.com/photo-1562632259-34a8932b2a4a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8dHVya2V5fGVufDB8fDB8fHww']) }}" class="btn btn-primary btn-sm mt-auto">Apply Now</a>
+                                            <a href="{{ route('visa.show', ['country' => 'Turkey', 'image' => 'https://images.unsplash.com/photo-1589561454226-796a8aa89b05?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8VHVya2V5fGVufDB8fDB8fHww']) }}" class="btn btn-primary btn-sm mt-auto">Apply Now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -229,7 +229,7 @@
                                         <div class="card-body d-flex flex-column">
                                             <h5 class="card-title">Argentina</h5>
                                             <p class="card-text">Apply for your Argentina visa online. Get your visa in 48 hours.</p>
-                                            <a href="{{ route('visa.show', ['country' => 'Argentina']) }}" class="btn btn-primary btn-sm mt-auto">Apply Now</a>
+                                            <a href="{{ route('visa.show', ['country' => 'Argentina', 'image' => 'https://images.unsplash.com/photo-1589909202802-8f4aadce1849?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8QXJnZW50aW5hfGVufDB8fDB8fHww']) }}" class="btn btn-primary btn-sm mt-auto">Apply Now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -240,7 +240,7 @@
                                         <div class="card-body d-flex flex-column">
                                             <h5 class="card-title">Mexico</h5>
                                             <p class="card-text">Apply for your Mexico visa online. Get your visa in 72 hours.</p>
-                                            <a href="{{ route('visa.show', ['country' => 'Mexico']) }}" class="btn btn-primary btn-sm mt-auto">Apply Now</a>
+                                            <a href="{{ route('visa.show', ['country' => 'Mexico', 'image' => 'https://images.unsplash.com/photo-1542835435-4fa357baa00b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8TWV4aWNvfGVufDB8fDB8fHww']) }}" class="btn btn-primary btn-sm mt-auto">Apply Now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -250,7 +250,7 @@
                                         <div class="card-body d-flex flex-column">
                                             <h5 class="card-title">Colombia</h5>
                                             <p class="card-text">Apply for your Colombia visa online. Get your visa in 24 hours.</p>
-                                            <a href="{{ route('visa.show', ['country' => 'Colombia']) }}" class="btn btn-primary btn-sm mt-auto">Apply Now</a>
+                                            <a href="{{ route('visa.show', ['country' => 'Colombia', 'image' => 'https://images.unsplash.com/photo-1534943441045-1009d7cb0bb9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Q29sb21iaWF8ZW58MHx8MHx8fDA%3D']) }}" class="btn btn-primary btn-sm mt-auto">Apply Now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -260,7 +260,7 @@
                                         <div class="card-body d-flex flex-column">
                                             <h5 class="card-title">Peru</h5>
                                             <p class="card-text">Apply for your Peru visa online. Get your visa in 48 hours.</p>
-                                            <a href="{{ route('visa.show', ['country' => 'Peru']) }}" class="btn btn-primary btn-sm mt-auto">Apply Now</a>
+                                            <a href="{{ route('visa.show', ['country' => 'Peru', 'image' => 'https://images.unsplash.com/photo-1632913582790-d0ec5882095a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8UGVydXxlbnwwfHwwfHx8MA%3D%3D']) }}" class="btn btn-primary btn-sm mt-auto">Apply Now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -270,7 +270,7 @@
                                         <div class="card-body d-flex flex-column">
                                             <h5 class="card-title">Chile</h5>
                                             <p class="card-text">Apply for your Chile visa online. Get your visa in 72 hours.</p>
-                                            <a href="{{ route('visa.show', ['country' => 'Chile']) }}" class="btn btn-primary btn-sm mt-auto">Apply Now</a>
+                                            <a href="{{ route('visa.show', ['country' => 'Chile', 'image' => 'https://images.unsplash.com/photo-1490782300182-697b80ad4293?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Q2hpbGV8ZW58MHx8MHx8fDA%3D']) }}" class="btn btn-primary btn-sm mt-auto">Apply Now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -280,7 +280,7 @@
                                         <div class="card-body d-flex flex-column">
                                             <h5 class="card-title">South Africa</h5>
                                             <p class="card-text">Apply for your South Africa visa online. Get your visa in 24 hours.</p>
-                                            <a href="{{ route('visa.show', ['country' => 'South Africa']) }}" class="btn btn-primary btn-sm mt-auto">Apply Now</a>
+                                            <a href="{{ route('visa.show', ['country' => 'South Africa', 'image' => 'https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y2FwZSUyMHRvd258ZW58MHx8MHx8fDA%3D']) }}" class="btn btn-primary btn-sm mt-auto">Apply Now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -290,7 +290,7 @@
                                         <div class="card-body d-flex flex-column">
                                             <h5 class="card-title">Morocco</h5>
                                             <p class="card-text">Apply for your Morocco visa online. Get your visa in 48 hours.</p>
-                                            <a href="{{ route('visa.show', ['country' => 'Morocco']) }}" class="btn btn-primary btn-sm mt-auto">Apply Now</a>
+                                            <a href="{{ route('visa.show', ['country' => 'Morocco', 'image' => 'https://plus.unsplash.com/premium_photo-1673415819362-c2ca640bfafe?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8TW9yb2Njb3xlbnwwfHwwfHx8MA%3D%3D']) }}" class="btn btn-primary btn-sm mt-auto">Apply Now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -300,7 +300,7 @@
                                         <div class="card-body d-flex flex-column">
                                             <h5 class="card-title">Kenya</h5>
                                             <p class="card-text">Apply for your Kenya visa online. Get your visa in 72 hours.</p>
-                                            <a href="{{ route('visa.show', ['country' => 'Kenya']) }}" class="btn btn-primary btn-sm mt-auto">Apply Now</a>
+                                            <a href="{{ route('visa.show', ['country' => 'Kenya', 'image' => 'https://images.unsplash.com/photo-1519659528534-7fd733a832a0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8S2VueWF8ZW58MHx8MHx8fDA%3D']) }}" class="btn btn-primary btn-sm mt-auto">Apply Now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -310,7 +310,7 @@
                                         <div class="card-body d-flex flex-column">
                                             <h5 class="card-title">Tanzania</h5>
                                             <p class="card-text">Apply for your Tanzania visa online. Get your visa in 24 hours.</p>
-                                            <a href="{{ route('visa.show', ['country' => 'Tanzania']) }}" class="btn btn-primary btn-sm mt-auto">Apply Now</a>
+                                            <a href="{{ route('visa.show', ['country' => 'Tanzania', 'image' => 'https://images.unsplash.com/photo-1575999502951-4ab25b5ca889?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8VGFuemFuaWF8ZW58MHx8MHx8fDA%3D']) }}" class="btn btn-primary btn-sm mt-auto">Apply Now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -320,7 +320,7 @@
                                         <div class="card-body d-flex flex-column">
                                             <h5 class="card-title">Nigeria</h5>
                                             <p class="card-text">Apply for your Nigeria visa online. Get your visa in 48 hours.</p>
-                                            <a href="{{ route('visa.show', ['country' => 'Nigeria']) }}" class="btn btn-primary btn-sm mt-auto">Apply Now</a>
+                                            <a href="{{ route('visa.show', ['country' => 'Nigeria', 'image' => 'https://images.unsplash.com/photo-1709403071665-47bbe085ec66?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fE5pZ2VyaWF8ZW58MHx8MHx8fDA%3D']) }}" class="btn btn-primary btn-sm mt-auto">Apply Now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -330,7 +330,7 @@
                                         <div class="card-body d-flex flex-column">
                                             <h5 class="card-title">Ghana</h5>
                                             <p class="card-text">Apply for your Ghana visa online. Get your visa in 72 hours.</p>
-                                            <a href="{{ route('visa.show', ['country' => 'Ghana']) }}" class="btn btn-primary btn-sm mt-auto">Apply Now</a>
+                                            <a href="{{ route('visa.show', ['country' => 'Ghana', 'image' => 'https://images.unsplash.com/photo-1589104602532-9cee07f8f62c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8R2hhbmF8ZW58MHx8MHx8fDA%3D']) }}" class="btn btn-primary btn-sm mt-auto">Apply Now</a>
                                         </div>
                                     </div>
                                 </div>

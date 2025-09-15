@@ -3,20 +3,20 @@
 @section('content')
 <style>
     .text-primary {
-        color: #d97706 !important;
+        color: #ee9734ff !important;
     }
     .btn-primary {
-        background: linear-gradient(135deg, #d97706, #f59e0b) !important;
+        background: #ee9734ff !important;
         border: none !important;
         transition: all 0.3s ease;
     }
     .btn-primary:hover {
-        background: linear-gradient(135deg, #f59e0b, #d97706) !important;
+        background: #f59e0b !important;
         transform: translateY(-2px);
         box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3);
     }
     .hero-section {
-        background: linear-gradient(135deg, #d97706 0%, #f59e0b 50%, #d97706 100%), url('{{ request('image') }}') no-repeat center center;
+        background: url('{{ request('image') }}') no-repeat center center;
         background-size: cover;
         background-blend-mode: overlay;
         height: 40vh;
@@ -38,7 +38,7 @@
         overflow: hidden;
     }
     .info-card .card-header {
-        background: linear-gradient(135deg, #d97706, #f59e0b);
+        background: #ee9734ff;
         color: white;
         border: none;
         font-weight: bold;
@@ -52,7 +52,7 @@
         padding-left: 0;
     }
     .list-group-item i {
-        color: #d97706;
+        color: #ee9734ff;
         margin-right: 10px;
     }
     .sticky-card {
@@ -60,7 +60,7 @@
         top: 120px;
     }
     .modal-header {
-        background-color: #d97706;
+        background-color: #ee9734ff;
         color: white;
     }
     .modal-title {
@@ -71,7 +71,7 @@
     .timeline {
         position: relative;
         padding-left: 0;
-        border-left: 2px solid #d97706;
+        border-left: 2px solid #ee9734ff;
         margin-left: 20px;
     }
     .timeline-item {
@@ -85,7 +85,7 @@
         width: 40px;
         height: 40px;
         border-radius: 50%;
-        background-color: #d97706;
+        background-color: #ee9734ff;
         color: white;
         display: flex;
         align-items: center;
@@ -113,7 +113,7 @@
     }
     
     .apply-button {
-        background: linear-gradient(135deg, #d97706, #f59e0b) !important;
+        background: linear-gradient(135deg, #ee9734ff, #f59e0b) !important;
         border: none !important;
         color: white !important;
         font-weight: 600;
@@ -124,7 +124,7 @@
     }
     
     .apply-button:hover {
-        background: linear-gradient(135deg, #f59e0b, #d97706) !important;
+        background: linear-gradient(135deg, #f59e0b, #ee9734ff) !important;
         transform: translateY(-2px);
         box-shadow: 0 8px 25px rgba(217, 119, 6, 0.4);
         color: white !important;

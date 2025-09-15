@@ -1,20 +1,20 @@
 <style>
     .btn-primary {
-        background: linear-gradient(135deg, #d97706, #f59e0b) !important;
+        background: linear-gradient(135deg, #ee9734ff, #f59e0b) !important;
         border: none !important;
         transition: all 0.3s ease;
     }
     .btn-primary:hover {
-        background: linear-gradient(135deg, #f59e0b, #d97706) !important;
+        background: linear-gradient(135deg, #f59e0b, #ee9734ff) !important;
         transform: translateY(-2px);
         box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3);
     }
     .card-header {
-        background: linear-gradient(135deg, #d97706, #f59e0b) !important;
+        background: linear-gradient(135deg, #ee9734ff, #f59e0b) !important;
         color: white !important;
     }
     .form-control:focus {
-        border-color: #d97706 !important;
+        border-color: #ee9734ff !important;
         box-shadow: 0 0 0 0.2rem rgba(217, 119, 6, 0.25) !important;
     }
 </style>

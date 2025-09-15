@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
     .hero-slider .hero-item {
-        height: 100vh;
+        height: 70vh;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -43,7 +43,7 @@
     .search-form button {
         padding: 15px 30px;
         border: none;
-        background: linear-gradient(135deg, #000080, #4169E1);
+        background: #000080;
         color: white;
         border-radius: 0 8px 8px 0;
         cursor: pointer;
@@ -51,14 +51,14 @@
         transition: all 0.3s ease;
     }
     .search-form button:hover {
-        background: linear-gradient(135deg, #4169E1, #000080);
+        background: #4169E1;
         transform: translateY(-2px);
         box-shadow: 0 4px 12px rgba(0, 0, 128, 0.3);
     }
 
     .service-box, .country-box {
         transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.3s ease;
-        background: linear-gradient(135deg, #ffffff, #f8f9fa);
+        background: #ffffff;
         border: 1px solid #e0e0e0;
         border-radius: 12px;
         overflow: hidden;
@@ -67,11 +67,11 @@
     .service-box:hover, .country-box:hover {
         transform: translateY(-8px) scale(1.02);
         box-shadow: 0 12px 30px rgba(0, 0, 128, 0.15);
-        background: linear-gradient(135deg, #ffffff, #e8f0ff);
+        background: #e8f0ff;
     }
     .future-section {
         position: relative;
-        background: linear-gradient(135deg, #000080, #4169E1);
+        background: #000080;
         color: #ffffff;
     }
     .future-section::before {
@@ -81,7 +81,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(135deg, rgba(0, 0, 128, 0.8), rgba(65, 105, 225, 0.6), rgba(0, 128, 128, 0.4));
+        background: rgba(0, 0, 128, 0.8);
         z-index: 1;
     }
     .future-section .container {
@@ -240,7 +240,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background-image: var(--bg-image, linear-gradient(135deg, #667eea 0%, #764ba2 100%));
+        background-image: var(--bg-image);
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
@@ -255,7 +255,6 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(135deg, rgba(0, 0, 128, 0.3) 0%, rgba(65, 105, 225, 0.2) 50%, rgba(0, 100, 0, 0.25) 100%);
         z-index: 2;
     }
 
@@ -277,7 +276,7 @@
         position: relative;
         overflow: hidden;
         color: #ffffff;
-        text-shadow: 0 2px 8px rgba(0, 0, 128, 0.4);
+        text-shadow: 0 2px 8px rgba(255, 255, 255, 0.4);
         letter-spacing: -0.02em;
     }
 
@@ -306,7 +305,7 @@
     .hero-item .btn-cta {
         display: inline-block;
         padding: 15px 40px;
-        background: linear-gradient(135deg, #d97706, #f59e0b);
+        background: linear-gradient(135deg, #ee9734ff, #f59e0b);
         color: white;
         text-decoration: none;
         border-radius: 50px;
@@ -322,7 +321,7 @@
     .hero-item .btn-cta:hover {
         transform: translateY(-3px) scale(1.02);
         box-shadow: 0 15px 40px rgba(217, 119, 6, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.2);
-        background: linear-gradient(135deg, #f59e0b, #d97706);
+        background: linear-gradient(135deg, #f59e0b, #ee9734ff);
     }
 
     .hero-item .btn-cta::before {
@@ -360,13 +359,13 @@
     /* Responsive animations */
     /* Text highlight effects */
     .text-highlight {
-        background: linear-gradient(120deg, transparent 0%, rgba(0, 128, 128, 0.15) 50%, transparent 100%);
+        background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.15) 50%, transparent 100%);
         background-size: 200% 100%;
         animation: highlightSweep 3s ease-in-out infinite;
         padding: 0 10px;
         color: #ffffff;
         font-weight: 700;
-        text-shadow: 0 0 10px rgba(0, 128, 128, 0.3);
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
     }
 
     @keyframes highlightSweep {
@@ -566,7 +565,7 @@
 </style>
 
 <div class="hero-slider owl-carousel">
-    <div class="hero-item" data-bg="{{ asset('img/SLIDER/Snowboard Sale GoDaddy Store Image (1).png') }}">
+    <div class="hero-item" data-bg="{{ asset('img/SLIDER/slider1.webp') }}">
         <div class="hero-loading"></div>
         <div class="container">
             <div class="hero-content">
@@ -583,7 +582,7 @@
             </div>
         </div>
     </div>
-    <div class="hero-item" data-bg="{{ asset('img/SLIDER/Snowboard Sale GoDaddy Store Image (2).png') }}">
+    <div class="hero-item" data-bg="{{ asset('img/SLIDER/slider2.png') }}">
         <div class="hero-loading"></div>
         <div class="container">
             <div class="hero-content">
@@ -600,7 +599,7 @@
             </div>
         </div>
     </div>
-    <div class="hero-item" data-bg="{{ asset('img/SLIDER/Snowboard Sale GoDaddy Store Image (3).png') }}">
+    <div class="hero-item" data-bg="{{ asset('img/SLIDER/slider3.png') }}">
         <div class="hero-loading"></div>
         <div class="container">
             <div class="hero-content">
@@ -617,7 +616,7 @@
             </div>
         </div>
     </div>
-    <div class="hero-item" data-bg="{{ asset('img/SLIDER/Snowboard Sale GoDaddy Store Image.png') }}">
+    <div class="hero-item" data-bg="{{ asset('img/SLIDER/slider4.png') }}">
         <div class="hero-loading"></div>
         <div class="container">
             <div class="hero-content">
@@ -634,7 +633,24 @@
             </div>
         </div>
     </div>
-    <div class="hero-item" data-bg="{{ asset('img/SLIDER/slider1.webp') }}">
+    <div class="hero-item" data-bg="{{ asset('img/SLIDER/slider5.png') }}">
+        <div class="hero-loading"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="text-highlight">Your Future Awaits, We'll Help You Get There</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Comprehensive visa and immigration services
+                </p>
+                <a href="#services" class="btn-cta">
+                    <span>Get Started</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="hero-item" data-bg="{{ asset('img/SLIDER/slider6.webp') }}">
         <div class="hero-loading"></div>
         <div class="container">
             <div class="hero-content">
@@ -685,21 +701,21 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="service-box" style="text-align: center; margin-bottom: 30px; transition: all 0.4s ease; cursor: pointer;">
-                    <i class="fas fa-briefcase" style="font-size: 3rem; color: #ec34ecff; margin-bottom: 20px;"></i>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD5N3UJqLUWrrmMyouv61x35h7dgdJk_KfMQ&s" alt="Work Visa" style="max-width: 100px; margin-bottom: 20px; border-radius: 8px;">
                     <h4>Work Visa</h4>
                     <p>Assisting students in obtaining work visas for their dream jobs.</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="service-box" style="text-align: center; margin-bottom: 30px; transition: all 0.4s ease; cursor: pointer;">
-                    <i class="fas fa-business-time" style="font-size: 3rem; color: #ec34ecff; margin-bottom: 20px;"></i>
+                    <img src="https://plus.unsplash.com/premium_photo-1752231227830-20cee47c4663?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fGJ1c2luZXNzJTIwdmlzYSUyMGltYWdlfGVufDB8fDB8fHww" alt="Business Visa" style="max-width: 100px; margin-bottom: 20px; border-radius: 8px;">
                     <h4>Business Visa</h4>
                     <p>Assisting professionals in obtaining business visas for their entrepreneurial ventures.</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="service-box" style="text-align: center; margin-bottom: 30px; transition: all 0.4s ease; cursor: pointer;">
-                    <i class="fas fa-home" style="font-size: 3rem; color: #ec34ecff; margin-bottom: 20px;"></i>
+                    <img src="https://4.imimg.com/data4/QM/CB/MY-15662140/permanent-residency-visa-service-500x500.jpg" alt="Permanent Residency" style="max-width: 100px; margin-bottom: 20px; border-radius: 8px;">
                     <h4>Permanent Residency</h4>
                     <p>Guiding you through the process of obtaining permanent residency.</p>
                 </div>
@@ -758,25 +774,25 @@
         <div class="row">
             <div class="col-md-3">
                 <div class="statistic-box" style="text-align: center; transition: all 0.4s ease; cursor: pointer;">
-                    <h3 class="count-number" style="font-size: 3rem; font-weight: bold; color: #d97706;" data-target="820">820+</h3>
+                    <h3 class="count-number" style="font-size: 3rem; font-weight: bold; color: #ee9734ff;" data-target="820">820+</h3>
                     <p>Happy Customers</p>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="statistic-box" style="text-align: center; transition: all 0.4s ease; cursor: pointer;">
-                    <h3 class="count-number" style="font-size: 3rem; font-weight: bold; color: #d97706;" data-target="48">48+</h3>
+                    <h3 class="count-number" style="font-size: 3rem; font-weight: bold; color: #ee9734ff;" data-target="48">48+</h3>
                     <p>Government Partners</p>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="statistic-box" style="text-align: center; transition: all 0.4s ease; cursor: pointer;">
-                    <h3 class="count-number" style="font-size: 3rem; font-weight: bold; color: #d97706;" data-target="80">80+</h3>
+                    <h3 class="count-number" style="font-size: 3rem; font-weight: bold; color: #ee9734ff;" data-target="80">80+</h3>
                     <p>Countries</p>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="statistic-box" style="text-align: center; transition: all 0.4s ease; cursor: pointer;">
-                    <h3 class="count-number" style="font-size: 3rem; font-weight: bold; color: #d97706;" data-target="245587">245587+</h3>
+                    <h3 class="count-number" style="font-size: 3rem; font-weight: bold; color: #ee9734ff;" data-target="245587">245587+</h3>
                     <p>Immigrations</p>
                 </div>
             </div>
