@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
 
     <style>
         .top-bar {
@@ -652,58 +654,12 @@
             @yield('content')
         </main>
 
-        <footer class="footer" style="background-image: url('https://jthemes.net/themes/wp/Rapid Visa/wp-content/uploads/2019/03/footer-bg.jpg');">
-            <div class="container py-5">
-                <div class="row">
-                    <div class="col-md-4 mb-4">
-                        <img src="{{ asset('img/logo.png') }}" alt="Rapid Visa Logo" style="height: 100px; margin-bottom: 1rem;">
-                        <p style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;">Your trusted partner for visa solutions. From application to approval, we handle every step with professionalism and care, making your travel and immigration process stress-free.</p>
-                        <div class="social-icons mt-4">
-                            <a href="#" class="me-3" style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="me-3" style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="me-3" style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"><i class="fab fa-google-plus-g"></i></a>
-                            <a href="#" class="me-3" style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <h5 style="background: linear-gradient(135deg, #000000, #000000); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: bold;">Contact Us</h5>
-                        <ul class="list-unstyled">
-                            <li class="d-flex align-items-start mb-3">
-                                <i class="fas fa-map-marker-alt me-3 mt-1" style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"></i>
-                                <span style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;">Office 603, 06th Floor Umm Al Quwain Bank Building, <br> Bank Street, Bur Dubai. Dubai, P.O.BOX : 243173, Dubai, UAE</span>
-                            </li>
-                            <li class="d-flex align-items-start mb-3">
-                                <i class="fas fa-phone me-3 mt-1" style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"></i>
-                                <span style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;"> +971-56-939-8472</span>
-                            </li><li class="d-flex align-items-start mb-3">
-                                <i class="fas fa-phone me-3 mt-1" style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"></i>
-                                <span style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;"> +971-4-265-4627</span>
-                            </li>
-                            <li class="d-flex align-items-start">
-                                <i class="fas fa-envelope me-3 mt-1" style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"></i>
-                                <span style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;">info@wahegurutravels.com</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <h5 style="background: linear-gradient(135deg, #000000, #000000); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: bold;">Subscribe</h5>
-                        <p style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;">Subscribe to our newsletter for the latest updates.</p>
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Your Email" style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
-                            <button class="btn btn-warning" type="button">Subscribe</button>
-                        </div>
-                        <small style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">We never share your email with anyone else.</small>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom text-center py-3" style="background: linear-gradient(135deg, #000080, #4169E1);">
-                <p class="mb-0" style="background: #ffffff; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600; font-size: 1.1rem;">&copy; 2025 Rapid Visa | All Rights Reserved. | &copy; Developed By wahegurutravels.com</p>
-            </div>
-        </footer>
+
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
@@ -768,6 +724,7 @@
             });
         });
     </script>
+
     @stack('scripts')
 </body>
 </html>

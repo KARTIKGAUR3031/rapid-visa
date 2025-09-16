@@ -339,7 +339,7 @@
                     <div class="row justify-content-center">
                         <div class="col-md-6 col-sm-6 col-6 text-center mb-4">
                             <img src="https://flagsapi.com/AE/flat/64.png" alt="UAE Flag" style="width: 64px; height: 64px;">
-                            <p class="mt-2">Dubai<br>UAE</p>
+                            <p class="mt-2">Dubai<br>United Arab Emirates</p>
                         </div>
                         <div class="col-md-6 col-sm-6 col-6 text-center mb-4">
                             <img src="https://flagsapi.com/SA/flat/64.png" alt="Saudi Arabia Flag" style="width: 64px; height: 64px;">

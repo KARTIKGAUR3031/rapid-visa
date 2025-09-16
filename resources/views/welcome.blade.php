@@ -1,557 +1,40 @@
 @extends('layouts.app')
 
 @section('content')
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-    .hero-slider .hero-item {
-        height: 70vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        color: #fff;
-        position: relative;
-    }
-    .hero-slider .hero-item h1 {
-        font-size: 4rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
-    }
-    .hero-slider .hero-item p {
-        font-size: 1.5rem;
-    }
-
-    .search-form {
-        display: flex;
-        justify-content: center;
-        margin-top: 30px;
-    }
-    .search-form input {
-        width: 300px;
-        padding: 15px;
-        border: 2px solid #4A4A4A;
-        border-radius: 8px 0 0 8px;
-        background-color: rgba(255, 255, 255, 0.9);
-        color: #4A4A4A;
-        font-size: 1rem;
-    }
-    .search-form input:focus {
-        outline: none;
-        border-color: #4169E1;
-        box-shadow: 0 0 0 3px rgba(65, 105, 225, 0.2);
-    }
-    .search-form button {
-        padding: 15px 30px;
-        border: none;
-        background: #000080;
-        color: white;
-        border-radius: 0 8px 8px 0;
-        cursor: pointer;
-        font-weight: 600;
-        transition: all 0.3s ease;
-    }
-    .search-form button:hover {
-        background: #4169E1;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(0, 0, 128, 0.3);
-    }
-
-    .service-box, .country-box {
-        transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.3s ease;
-        background: #ffffff;
-        border: 1px solid #e0e0e0;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 4px 15px rgba(0, 0, 128, 0.08);
-    }
-    .service-box:hover, .country-box:hover {
-        transform: translateY(-8px) scale(1.02);
-        box-shadow: 0 12px 30px rgba(0, 0, 128, 0.15);
-        background: #e8f0ff;
-    }
-    .future-section {
-        position: relative;
-        background: #000080;
-        color: #ffffff;
-    }
-    .future-section::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 128, 0.8);
-        z-index: 1;
-    }
-    .future-section .container {
-        position: relative;
-        z-index: 2;
-    }
-    .future-section h2, .future-section h3 {
-        color: #ffffff;
-        text-shadow: 0 2px 4px rgba(0, 0, 128, 0.3);
-    }
-    .future-section p {
-        color: #e8f0ff;
-        font-weight: 400;
-    }
-
-    /* Animation Styles */
-    .animate-on-scroll {
-        opacity: 0;
-        transform: translateY(50px);
-        transition: all 0.6s ease-out;
-    }
-    
-    .animate-on-scroll.animated {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    
-    .slide-in-left {
-        transform: translateX(-100px);
-    }
-    
-    .slide-in-left.animated {
-        transform: translateX(0);
-    }
-    
-    .slide-in-right {
-        transform: translateX(100px);
-    }
-    
-    .slide-in-right.animated {
-        transform: translateX(0);
-    }
-    
-    .fade-in {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    
-    .fade-in.animated {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    
-    .zoom-in {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    
-    .zoom-in.animated {
-        opacity: 1;
-        transform: scale(1);
-    }
-    
-    .stagger-animation > * {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.5s ease-out;
-    }
-    
-    .stagger-animation.animated > *:nth-child(1) { transition-delay: 0.1s; opacity: 1; transform: translateY(0); }
-    .stagger-animation.animated > *:nth-child(2) { transition-delay: 0.2s; opacity: 1; transform: translateY(0); }
-    .stagger-animation.animated > *:nth-child(3) { transition-delay: 0.3s; opacity: 1; transform: translateY(0); }
-    .stagger-animation.animated > *:nth-child(4) { transition-delay: 0.4s; opacity: 1; transform: translateY(0); }
-    .stagger-animation.animated > *:nth-child(5) { transition-delay: 0.5s; opacity: 1; transform: translateY(0); }
-    .stagger-animation.animated > *:nth-child(6) { transition-delay: 0.6s; opacity: 1; transform: translateY(0); }
-
-    /* Hero Slider Animations - Professional like rapidvisas.com */
-    @keyframes kenBurns {
-        0% {
-            transform: scale(1.1) translateX(-2%);
-            opacity: 0.8;
-        }
-        100% {
-            transform: scale(1.2) translateX(2%);
-            opacity: 1;
-        }
-    }
-
-    @keyframes parallaxSlide {
-        0% {
-            transform: translateY(100px) scale(0.9);
-            opacity: 0;
-        }
-        100% {
-            transform: translateY(0) scale(1);
-            opacity: 1;
-        }
-    }
-
-    @keyframes textReveal {
-        0% {
-            transform: translateY(100%);
-            opacity: 0;
-        }
-        100% {
-            transform: translateY(0);
-            opacity: 1;
-        }
-    }
-
-    @keyframes textGlow {
-        0% {
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-        }
-        50% {
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(142, 108, 235, 0.4);
-        }
-        100% {
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-        }
-    }
-
-    @keyframes overlayReveal {
-        0% {
-            transform: scaleX(0);
-            transform-origin: left;
-        }
-        50% {
-            transform: scaleX(1);
-            transform-origin: left;
-        }
-        51% {
-            transform: scaleX(1);
-            transform-origin: right;
-        }
-        100% {
-            transform: scaleX(0);
-            transform-origin: right;
-        }
-    }
-
     .hero-item {
+        background-size: cover;
+        background-position: center center;
         position: relative;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        color: #ffffff;
+        z-index: 1;
+        height: 600px;
+        background-image: var(--bg-image);
     }
-
     .hero-item::before {
         content: '';
         position: absolute;
         top: 0;
         left: 0;
-        right: 0;
-        bottom: 0;
-        background-image: var(--bg-image);
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        animation: kenBurns 8s ease-in-out infinite alternate;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
         z-index: 1;
     }
-
-    .hero-item::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 2;
-    }
-
-    .hero-item .container {
-        position: relative;
-        z-index: 3;
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 0 20px;
-        animation: parallaxSlide 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s both;
-    }
-
-    .hero-item h1 {
-        font-size: 3.5rem;
-        font-weight: 700;
-        margin-bottom: 1.5rem;
-        line-height: 1.2;
-        animation: textReveal 1s cubic-bezier(0.77, 0, 0.18, 1) 0.6s both;
-        position: relative;
-        overflow: hidden;
-        color: #ffffff;
-        text-shadow: 0 2px 8px rgba(255, 255, 255, 0.4);
-        letter-spacing: -0.02em;
-    }
-
-    .hero-item h1::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-        animation: overlayReveal 1.5s ease-in-out 1.8s both;
-    }
-
-    .hero-item p {
-        font-size: 1.8rem;
-        margin-bottom: 2rem;
-        animation: textReveal 1s cubic-bezier(0.77, 0, 0.18, 1) 0.9s both;
-        opacity: 0.95;
-        color: #e8f0ff;
-        font-weight: 400;
-        text-shadow: 0 1px 4px rgba(0, 0, 128, 0.3);
-        letter-spacing: 0.01em;
-    }
-
-    .hero-item .btn-cta {
-        display: inline-block;
-        padding: 15px 40px;
-        background: linear-gradient(135deg, #ee9734ff, #f59e0b);
-        color: white;
-        text-decoration: none;
-        border-radius: 50px;
-        font-weight: 600;
-        font-size: 1.1rem;
-        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        box-shadow: 0 8px 25px rgba(217, 119, 6, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1);
-        animation: parallaxSlide 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.2s both;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .hero-item .btn-cta:hover {
-        transform: translateY(-3px) scale(1.02);
-        box-shadow: 0 15px 40px rgba(217, 119, 6, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.2);
-        background: linear-gradient(135deg, #f59e0b, #ee9734ff);
-    }
-
-    .hero-item .btn-cta::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-        transition: left 0.6s ease;
-    }
-
-    .hero-item .btn-cta:hover::before {
-        left: 100%;
-    }
-
-    /* Owl Carousel enhanced animations */
-    .owl-item.active .hero-item::before {
-        animation: kenBurns 8s ease-in-out infinite alternate;
-    }
-
-    .owl-item.active .hero-item h1 {
-        animation: textReveal 1s cubic-bezier(0.77, 0, 0.18, 1) 0.6s both, textGlow 2s ease-in-out 2s infinite;
-    }
-
-    .owl-item.active .hero-item p {
-        animation: textReveal 1s cubic-bezier(0.77, 0, 0.18, 1) 0.9s both;
-    }
-
-    .owl-item.active .hero-item .container {
-        animation: parallaxSlide 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s both;
-    }
-
-    /* Responsive animations */
-    /* Text highlight effects */
-    .text-highlight {
-        background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.15) 50%, transparent 100%);
-        background-size: 200% 100%;
-        animation: highlightSweep 3s ease-in-out infinite;
-        padding: 0 10px;
-        color: #ffffff;
-        font-weight: 700;
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-    }
-
-    @keyframes highlightSweep {
-        0%, 100% { background-position: 200% 0; }
-        50% { background-position: -200% 0; }
-    }
-
-    /* Enhanced button animations */
-    .btn-cta {
-        position: relative;
-        overflow: hidden;
-        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-
-    .btn-cta::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-        transition: left 0.5s ease;
-    }
-
-    .btn-cta:hover::before {
-        left: 100%;
-    }
-
-    .btn-cta i {
-        margin-left: 8px;
-        transition: transform 0.3s ease;
-    }
-
-    .btn-cta:hover i {
-        transform: translateX(5px);
-    }
-
-    /* Hero content wrapper */
     .hero-content {
         position: relative;
-        z-index: 4;
+        z-index: 2;
+        color: #fff;
+        height: 600px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .service-card:hover {
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 15px 40px rgba(217, 119, 6, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.2);
     }
 
-    /* Responsive animations */
-    @media (max-width: 768px) {
-        .hero-item {
-            min-height: 400px;
-            padding: 40px 20px;
-        }
-        
-        .hero-item h1 {
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
-        }
-        
-        .hero-item p {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .btn-cta {
-            padding: 12px 30px;
-            font-size: 1rem;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .hero-item {
-            min-height: 350px;
-        }
-        
-        .hero-item h1 {
-            font-size: 1.8rem;
-        }
-        
-        .hero-item p {
-            font-size: 1rem;
-        }
-    }
-
-    /* Loading animation with fade out */
-    .hero-loading {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 40px;
-        height: 40px;
-        border: 3px solid rgba(255, 255, 255, 0.3);
-        border-top: 3px solid #008080;
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-        z-index: 10;
-        transition: opacity 0.5s ease, visibility 0.5s ease;
-        box-shadow: 0 0 20px rgba(0, 128, 128, 0.3);
-    }
-
-    .hero-item.loaded .hero-loading {
-        opacity: 0;
-        visibility: hidden;
-    }
-
-    @keyframes spin {
-        0% { transform: translate(-50%, -50%) rotate(0deg); }
-        100% { transform: translate(-50%, -50%) rotate(360deg); }
-    }
-
-    /* Smooth transitions for all elements */
-    .hero-item * {
-        transition: all 0.3s ease;
-    }
-
-    /* Modern glassmorphism effects */
-    .glass-effect {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        box-shadow: 0 8px 32px rgba(0, 0, 128, 0.1);
-    }
-
-    /* Sophisticated gradient backgrounds */
-    .gradient-bg {
-        background: linear-gradient(135deg, #000080, #4169E1, #008080, #006400);
-        background-size: 400% 400%;
-        animation: gradientShift 8s ease infinite;
-    }
-
-    @keyframes gradientShift {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-    }
-
-    /* Premium text styling */
-    .premium-text {
-        background: linear-gradient(135deg, #ffffff, #e8f0ff);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
-
-    /* Enhanced shadows and depth */
-    .shadow-enhanced {
-        box-shadow: 0 10px 40px rgba(0, 0, 128, 0.15), 0 2px 10px rgba(65, 105, 225, 0.1);
-    }
-
-    /* Parallax effect variables */
-    .hero-item {
-        --parallax-x: 0px;
-        --parallax-y: 0px;
-    }
-
-    .hero-item::before {
-        transform: translate(var(--parallax-x), var(--parallax-y));
-    }
-
-    /* Modern hover states */
-    .modern-hover:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(0, 0, 128, 0.2);
-    }
-
-    /* Sophisticated borders */
-    .sophisticated-border {
-        border: 1px solid rgba(192, 192, 192, 0.3);
-        border-radius: 12px;
-    }
-
-
-</style>
-
-<style>
     .service-box:hover {
-        transform: scale(1.05);
-        box-shadow: 0 15px 35px rgba(217, 119, 6, 0.3);
-        filter: brightness(1.1);
-    }
-
-    .country-box:hover {
-        transform: scale(1.05);
-        box-shadow: 0 15px 35px rgba(217, 119, 6, 0.3);
-        filter: brightness(1.1);
-    }
-
-    .statistic-box:hover {
         transform: scale(1.05);
         box-shadow: 0 15px 35px rgba(217, 119, 6, 0.3);
         filter: brightness(1.1);
@@ -565,7 +48,7 @@
 </style>
 
 <div class="hero-slider owl-carousel">
-    <div class="hero-item" data-bg="{{ asset('img/SLIDER/slider1.webp') }}">
+    <div class="hero-item" data-bg="{{ asset('img/slider/slider3.png') }}">
         <div class="hero-loading"></div>
         <div class="container">
             <div class="hero-content">
@@ -582,7 +65,7 @@
             </div>
         </div>
     </div>
-    <div class="hero-item" data-bg="{{ asset('img/SLIDER/slider2.png') }}">
+    <div class="hero-item" data-bg="{{ asset('img/slider/slider4.png') }}">
         <div class="hero-loading"></div>
         <div class="container">
             <div class="hero-content">
@@ -599,7 +82,7 @@
             </div>
         </div>
     </div>
-    <div class="hero-item" data-bg="{{ asset('img/SLIDER/slider3.png') }}">
+    <div class="hero-item" data-bg="{{ asset('img/slider/slider5.png') }}">
         <div class="hero-loading"></div>
         <div class="container">
             <div class="hero-content">
@@ -616,7 +99,7 @@
             </div>
         </div>
     </div>
-    <div class="hero-item" data-bg="{{ asset('img/SLIDER/slider4.png') }}">
+    <div class="hero-item" data-bg="{{ asset('img/slider/slider6.webp') }}">
         <div class="hero-loading"></div>
         <div class="container">
             <div class="hero-content">
@@ -633,7 +116,7 @@
             </div>
         </div>
     </div>
-    <div class="hero-item" data-bg="{{ asset('img/SLIDER/slider5.png') }}">
+    <div class="hero-item" data-bg="{{ asset('img/slider/slider1.webp') }}">
         <div class="hero-loading"></div>
         <div class="container">
             <div class="hero-content">
@@ -650,7 +133,7 @@
             </div>
         </div>
     </div>
-    <div class="hero-item" data-bg="{{ asset('img/SLIDER/slider6.webp') }}">
+    <div class="hero-item" data-bg="{{ asset('img/slider/slider2.png') }}">
         <div class="hero-loading"></div>
         <div class="container">
             <div class="hero-content">
@@ -668,7 +151,6 @@
         </div>
     </div>
 </div>
-
 <div class="about-section animate-on-scroll slide-in-left" style="padding: 100px 0;">
     <div class="container">
         <div class="row align-items-center">
@@ -695,80 +177,269 @@
     </div>
 </div>
 
-<div class="services-section animate-on-scroll fade-in" style="padding: 100px 0; background-color: #f8f9fa;">
+<!-- Services Section -->
+<div class="service-section" style="padding: 100px 0; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
     <div class="container">
-        <h2 style="text-align: center; margin-bottom: 50px;">Our Services</h2>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="service-box" style="text-align: center; margin-bottom: 30px; transition: all 0.4s ease; cursor: pointer;">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD5N3UJqLUWrrmMyouv61x35h7dgdJk_KfMQ&s" alt="Work Visa" style="max-width: 100px; margin-bottom: 20px; border-radius: 8px;">
-                    <h4>Work Visa</h4>
-                    <p>Assisting students in obtaining work visas for their dream jobs.</p>
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center mb-5">
+                <h2 class="text-white mb-3" style="font-size: 2.5rem; font-weight: 700;">Our Services</h2>
+                <p class="text-white-50" style="font-size: 1.2rem;">Comprehensive immigration solutions tailored to your needs</p>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card" style="background: white; border-radius: 15px; padding: 40px 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease; height: 100%;">
+                    <div class="service-icon mb-4" style="width: 70px; height: 70px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; animation: icon-float 3s ease-in-out infinite;">
+                        <i class="fas fa-briefcase text-white" style="font-size: 1.5rem;"></i>
+                    </div>
+                    <h4 class="text-center mb-3" style="font-weight: 600; color: #333;">Work Visa</h4>
+                    <p class="text-center text-muted mb-4">Professional work visa solutions for global opportunities with expert guidance.</p>
+                    <div class="text-center">
+                        <a href="{{ route('visas') }}" class="btn btn-primary" style="background: linear-gradient(135deg, #667eea, #764ba2); border: none; border-radius: 25px; padding: 10px 30px;">Learn More</a>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="service-box" style="text-align: center; margin-bottom: 30px; transition: all 0.4s ease; cursor: pointer;">
-                    <img src="https://plus.unsplash.com/premium_photo-1752231227830-20cee47c4663?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fGJ1c2luZXNzJTIwdmlzYSUyMGltYWdlfGVufDB8fDB8fHww" alt="Business Visa" style="max-width: 100px; margin-bottom: 20px; border-radius: 8px;">
-                    <h4>Business Visa</h4>
-                    <p>Assisting professionals in obtaining business visas for their entrepreneurial ventures.</p>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card" style="background: white; border-radius: 15px; padding: 40px 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease; height: 100%;">
+                    <div class="service-icon mb-4" style="width: 70px; height: 70px; background: linear-gradient(135deg, #f093fb, #f5576c); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; animation: icon-float 3s ease-in-out infinite; animation-delay: 0.2s;">
+                        <i class="fas fa-graduation-cap text-white" style="font-size: 1.5rem;"></i>
+                    </div>
+                    <h4 class="text-center mb-3" style="font-weight: 600; color: #333;">Student Visa</h4>
+                    <p class="text-center text-muted mb-4">Comprehensive student visa support for academic excellence worldwide.</p>
+                    <div class="text-center">
+                        <a href="{{ route('visas') }}" class="btn btn-primary" style="background: linear-gradient(135deg, #f093fb, #f5576c); border: none; border-radius: 25px; padding: 10px 30px;">Learn More</a>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="service-box" style="text-align: center; margin-bottom: 30px; transition: all 0.4s ease; cursor: pointer;">
-                    <img src="https://4.imimg.com/data4/QM/CB/MY-15662140/permanent-residency-visa-service-500x500.jpg" alt="Permanent Residency" style="max-width: 100px; margin-bottom: 20px; border-radius: 8px;">
-                    <h4>Permanent Residency</h4>
-                    <p>Guiding you through the process of obtaining permanent residency.</p>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card" style="background: white; border-radius: 15px; padding: 40px 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease; height: 100%;">
+                    <div class="service-icon mb-4" style="width: 70px; height: 70px; background: linear-gradient(135deg, #4facfe, #00f2fe); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; animation: icon-float 3s ease-in-out infinite; animation-delay: 0.4s;">
+                        <i class="fas fa-id-card text-white" style="font-size: 1.5rem;"></i>
+                    </div>
+                    <h4 class="text-center mb-3" style="font-weight: 600; color: #333;">Permanent Residency</h4>
+                    <p class="text-center text-muted mb-4">Achieve your permanent residency dreams with expert green card guidance.</p>
+                    <div class="text-center">
+                        <a href="{{ route('visas') }}" class="btn btn-primary" style="background: linear-gradient(135deg, #4facfe, #00f2fe); border: none; border-radius: 25px; padding: 10px 30px;">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card" style="background: white; border-radius: 15px; padding: 40px 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease; height: 100%;">
+                    <div class="service-icon mb-4" style="width: 70px; height: 70px; background: linear-gradient(135deg, #fa709a, #fee140); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; animation: icon-float 3s ease-in-out infinite; animation-delay: 0.6s;">
+                        <i class="fas fa-users text-white" style="font-size: 1.5rem;"></i>
+                    </div>
+                    <h4 class="text-center mb-3" style="font-weight: 600; color: #333;">Family Immigration</h4>
+                    <p class="text-center text-muted mb-4">Reunite with your loved ones through expert family immigration services.</p>
+                    <div class="text-center">
+                        <a href="{{ route('visas') }}" class="btn btn-primary" style="background: linear-gradient(135deg, #fa709a, #fee140); border: none; border-radius: 25px; padding: 10px 30px;">Learn More</a>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card" style="background: white; border-radius: 15px; padding: 40px 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease; height: 100%;">
+                    <div class="service-icon mb-4" style="width: 70px; height: 70px; background: linear-gradient(135deg, #a8edea, #fed6e3); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; animation: icon-float 3s ease-in-out infinite; animation-delay: 0.8s;">
+                        <i class="fas fa-handshake text-dark" style="font-size: 1.5rem;"></i>
+                    </div>
+                    <h4 class="text-center mb-3" style="font-weight: 600; color: #333;">Business & Investor</h4>
+                    <p class="text-center text-muted mb-4">Strategic business and investor visa solutions for expansion.</p>
+                    <div class="text-center">
+                        <a href="{{ route('contact') }}" class="btn btn-primary" style="background: linear-gradient(135deg, #a8edea, #fed6e3); color: #333; border: none; border-radius: 25px; padding: 10px 30px;">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card" style="background: white; border-radius: 15px; padding: 40px 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease; height: 100%;">
+                    <div class="service-icon mb-4" style="width: 70px; height: 70px; background: linear-gradient(135deg, #ffecd2, #fcb69f); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; animation: icon-float 3s ease-in-out infinite; animation-delay: 1s;">
+                        <i class="fas fa-chess-knight text-dark" style="font-size: 1.5rem;"></i>
+                    </div>
+                    <h4 class="text-center mb-3" style="font-weight: 600; color: #333;">Immigration Consulting</h4>
+                    <p class="text-center text-muted mb-4">Strategic guidance for complex immigration cases and scenarios.</p>
+                    <div class="text-center">
+                        <a href="{{ route('contact') }}" class="btn btn-primary" style="background: linear-gradient(135deg, #ffecd2, #fcb69f); color: #333; border: none; border-radius: 25px; padding: 10px 30px;">Learn More</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="country-section animate-on-scroll fade-in" style="padding: 100px 0;">
-    <div class="container">
-        <h2 style="text-align: center; margin-bottom: 50px;">Choose Your Country</h2>
+<style>
+@keyframes icon-float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+.service-card {
+    transition: all 0.3s ease;
+}
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15) !important;
+}
+.service-card .btn {
+    transition: all 0.3s ease;
+}
+.service-card .btn:hover {
+    transform: scale(1.05);
+}
+@media (max-width: 768px) {
+    .service-section {
+        padding: 60px 0 !important;
+    }
+    .service-card {
+        margin-bottom: 30px;
+    }
+}
+</style>
+
+
+ <section class="tabbed-visa-section" style="position: relative; background-size: cover; background-position: center center; padding: 100px 0; background-color: rgba(0, 0, 0, 0.5);">
+
+    <div class="container" style="position: relative; z-index: 1;">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center mb-5">
+                <h2 class="text-white mb-3" style="font-size: 2.5rem; font-weight: 700;">Countries We Support</h2>
+                <p class="text-white-50" style="font-size: 1.2rem;">Select a country to see the available visa types.</p>
+            </div>
+        </div>
         <div class="row">
-            <div class="col-md-2">
-                <div class="country-box" style="text-align: center; margin-bottom: 30px; transition: all 0.4s ease; cursor: pointer;">
-                    <img src="{{ asset('img/flags/flagsss/canada-flag.jpg') }}" alt="Canada" style="max-width: 100px; margin-bottom: 20px;">
-                    <h4>Canada</h4>
+            <div class="col-md-12">
+                <div class="nav nav-pills nav-justified" id="v-pills-tab" role="tablist" aria-orientation="horizontal" style="border-bottom: 1px solid rgba(255, 255, 255, 0.2);">
+                    <button class="nav-link active" id="v-pills-canada-tab" data-bs-toggle="pill" data-bs-target="#v-pills-canada" type="button" role="tab" aria-controls="v-pills-canada" aria-selected="true" data-image="{{ asset('img/contory/canada.webp') }}" style="background-color: transparent; border-radius: 0; color: white; border-bottom: 2px solid white;">
+                         Canada
+                    </button>
+                    <button class="nav-link" id="v-pills-australia-tab" data-bs-toggle="pill" data-bs-target="#v-pills-australia" type="button" role="tab" aria-controls="v-pills-australia" aria-selected="false" data-image="{{ asset('img/contory/australia.webp') }}" style="background-color: transparent; border-radius: 0; color: white;">
+                         Australia
+                    </button>
+                    <button class="nav-link" id="v-pills-uk-tab" data-bs-toggle="pill" data-bs-target="#v-pills-uk" type="button" role="tab" aria-controls="v-pills-uk" aria-selected="false" data-image="{{ asset('img/contory/england.webp') }}" style="background-color: transparent; border-radius: 0; color: white;">
+                         England
+                    </button>
+                    <button class="nav-link" id="v-pills-usa-tab" data-bs-toggle="pill" data-bs-target="#v-pills-usa" type="button" role="tab" aria-controls="v-pills-usa" aria-selected="false" data-image="{{ asset('img/contory/germany.webp') }}" style="background-color: transparent; border-radius: 0; color: white;">
+                        Germany
+                    </button>
                 </div>
             </div>
-            <div class="col-md-2">
-                <div class="country-box" style="text-align: center; margin-bottom: 30px; transition: all 0.4s ease; cursor: pointer;">
-                    <img src="{{ asset('img/flags/flagsss/newzealand-flag.jpg') }}" alt="New Zealand" style="max-width: 100px; margin-bottom: 20px;">
-                    <h4>New Zealand</h4>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="country-box" style="text-align: center; margin-bottom: 30px; transition: all 0.4s ease; cursor: pointer;">
-                    <img src="{{ asset('img/flags/flagsss/singapore-flag.jpg') }}" alt="Singapore" style="max-width: 100px; margin-bottom: 20px;">
-                    <h4>Singapore</h4>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="country-box" style="text-align: center; margin-bottom: 30px; transition: all 0.4s ease; cursor: pointer;">
-                    <img src="{{ asset('img/flags/flagsss/uk-flag.jpg') }}" alt="UK" style="max-width: 100px; margin-bottom: 20px;">
-                    <h4>UK</h4>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="country-box" style="text-align: center; margin-bottom: 30px; transition: all 0.4s ease; cursor: pointer;">
-                    <img src="{{ asset('img/flags/flagsss/usa-flag.jpg') }}" alt="USA" style="max-width: 100px; margin-bottom: 20px;">
-                    <h4>USA</h4>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="country-box" style="text-align: center; margin-bottom: 30px; transition: all 0.4s ease; cursor: pointer;">
-                    <img src="{{ asset('img/flags/flagsss/australia-flag.jpg') }}" alt="Australia" style="max-width: 100px; margin-bottom: 20px;">
-                    <h4>Australia</h4>
+            <div class="col-md-12">
+                <div class="tab-content" id="v-pills-tabContent" style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 10px; padding: 30px; margin-top: 20px;">
+                    <div class="tab-pane fade show active" id="v-pills-canada" role="tabpanel" aria-labelledby="v-pills-canada-tab">
+                        <h3 class="text-white mb-4">Canada Visa Types</h3>
+                        <ul class="visa-type-list" style="list-style: none; padding: 0;">
+                            <li><a href="#" style="color: white;">Tourist Visa</a></li>
+                            <li><a href="#" style="color: white;">Working Holiday Visa</a></li>
+                            <li><a href="#" style="color: white;">Temporary Work Visa</a></li>
+                            <li><a href="#" style="color: white;">Student Visa</a></li>
+                            <li><a href="#" style="color: white;">Family Visa</a></li>
+                            <li><a href="#" style="color: white;">Protection Visa</a></li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-australia" role="tabpanel" aria-labelledby="v-pills-australia-tab">
+                        <h3 class="text-white mb-4">Australia Visa Types</h3>
+                        <ul class="visa-type-list" style="list-style: none; padding: 0;">
+                            <li><a href="#" style="color: white;">Tourist Visa</a></li>
+                            <li><a href="#" style="color: white;">Working Holiday Visa</a></li>
+                            <li><a href="#" style="color: white;">Temporary Work Visa</a></li>
+                            <li><a href="#" style="color: white;">Student Visa</a></li>
+                            <li><a href="#" style="color: white;">Family Visa</a></li>
+                            <li><a href="#" style="color: white;">Protection Visa</a></li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-uk" role="tabpanel" aria-labelledby="v-pills-uk-tab">
+                        <h3 class="text-white mb-4">England Visa Types</h3>
+                        <ul class="visa-type-list" style="list-style: none; padding: 0;">
+                            <li><a href="#" style="color: white;">Tourist Visa</a></li>
+                            <li><a href="#" style="color: white;">Working Holiday Visa</a></li>
+                            <li><a href="#" style="color: white;">Temporary Work Visa</a></li>
+                            <li><a href="#" style="color: white;">Student Visa</a></li>
+                            <li><a href="#" style="color: white;">Family Visa</a></li>
+                            <li><a href="#" style="color: white;">Protection Visa</a></li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-usa" role="tabpanel" aria-labelledby="v-pills-usa-tab">
+                        <h3 class="text-white mb-4">Germany Visa Types</h3>
+                        <ul class="visa-type-list" style="list-style: none; padding: 0;">
+                            <li><a href="#" style="color: white;">Tourist Visa</a></li>
+                            <li><a href="#" style="color: white;">Working Holiday Visa</a></li>
+                            <li><a href="#" style="color: white;">Temporary Work Visa</a></li>
+                            <li><a href="#" style="color: white;">Student Visa</a></li>
+                            <li><a href="#" style="color: white;">Family Visa</a></li>
+                            <li><a href="#" style="color: white;">Protection Visa</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const tabbedSection = document.querySelector('.tabbed-visa-section');
+        const tabButtons = document.querySelectorAll('#v-pills-tab button');
 
-<div class="statistic-section" style="background-color: #f8f9fa; padding: 100px 0;">
+        tabButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const newImage = this.dataset.image;
+                tabbedSection.style.backgroundImage = `url(${newImage})`;
+            });
+        });
+
+        // Set the initial background image
+        const initialImage = document.querySelector('#v-pills-tab .active').dataset.image;
+        tabbedSection.style.backgroundImage = `url(${initialImage})`;
+    });
+</script>
+</section>
+<section style="padding: 80px 0;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center mb-5">
+                <h2 class="mb-3" style="font-size: 2.5rem; font-weight: 700;">WHAT DO WE OFFER</h2>
+                <p style="font-size: 1.2rem;">Empowering Your Journey, One Visa at a Time</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="service-card" style="text-align: center; padding: 30px; border-radius: 10px; background-color: white; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                    <div class="icon" style="font-size: 3rem; color: #ee9734ff; margin-bottom: 20px;">
+                        <i class="fas fa-file-signature"></i>
+                    </div>
+                    <h4>Visa Application</h4>
+                    <p>We handle all types of visa applications, ensuring a smooth and hassle-free process.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-card" style="text-align: center; padding: 30px; border-radius: 10px; background-color: white; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                    <div class="icon" style="font-size: 3rem; color: #ee9734ff; margin-bottom: 20px;">
+                        <i class="fas fa-plane-departure"></i>
+                    </div>
+                    <h4>Flight Booking</h4>
+                    <p>We provide the best flight booking options to match your travel plans and budget.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-card" style="text-align: center; padding: 30px; border-radius: 10px; background-color: white; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                    <div class="icon" style="font-size: 3rem; color: #ee9734ff; margin-bottom: 20px;">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h4>Online Consultation</h4>
+                    <p>Our experts are available for online consultations to answer all your queries.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>  
+
     <div class="container">
         <h2 style="text-align: center; margin-bottom: 50px;">Thousands Of People Choose Our Services</h2>
         <div class="row">
@@ -894,89 +565,13 @@ window.addEventListener('scroll', animateOnScroll);
 window.addEventListener('load', () => {
     animateOnScroll();
     initCounterAnimation();
+    initHeroSlider();
 });
 
 // Trigger initial check
 animateOnScroll();
 
-// Hero slider background and animation handling
-function initHeroSlider() {
-    const heroItems = document.querySelectorAll('.hero-item');
-    
-    heroItems.forEach(item => {
-        const bgImage = item.getAttribute('data-bg');
-        if (bgImage) {
-            item.style.setProperty('--bg-image', `url('${bgImage}')`);
-        }
-    });
 
-    // Add background image styles
-    const style = document.createElement('style');
-    style.textContent = `
-        .hero-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: var(--bg-image);
-            background-size: cover;
-            background-position: center;
-            z-index: 1;
-        }
-    `;
-    document.head.appendChild(style);
-
-    // Initialize Owl Carousel with animation callbacks
-    if (typeof $ !== 'undefined' && $.fn.owlCarousel) {
-        $('.hero-slider').owlCarousel({
-            items: 1,
-            loop: true,
-            autoplay: true,
-            autoplayTimeout: 3000,
-            autoplayHoverPause: true,
-            nav: false,
-            dots: true,
-            animateOut: 'fadeOut',
-            animateIn: 'fadeIn',
-            smartSpeed: 1000,
-            onInitialized: function() {
-                // Trigger first slide animation
-                setTimeout(() => {
-                    const activeSlide = document.querySelector('.hero-item');
-                    if (activeSlide) {
-                        activeSlide.classList.add('animated');
-                    }
-                }, 100);
-            },
-            onTranslated: function() {
-                // Trigger animations for new active slide
-                const activeSlide = document.querySelector('.owl-item.active .hero-item');
-                if (activeSlide) {
-                    // Reset animations
-                    const h1 = activeSlide.querySelector('h1');
-                    const p = activeSlide.querySelector('p');
-                    const container = activeSlide.querySelector('.container');
-                    
-                    // Force reflow to restart animations
-                    h1.style.animation = 'none';
-                    p.style.animation = 'none';
-                    container.style.animation = 'none';
-                    
-                    setTimeout(() => {
-                        h1.style.animation = 'slideInUp 1s ease-out 0.7s both';
-                        p.style.animation = 'slideInUp 1s ease-out 0.9s both';
-                        container.style.animation = 'slideInUp 1s ease-out 0.5s both';
-                    }, 10);
-                }
-            }
-        });
-    }
-}
-
-// Initialize hero slider when DOM is ready
-document.addEventListener('DOMContentLoaded', initHeroSlider);
 
 // Enhanced hero slider initialization with loading states and professional animations
 function initHeroSlider() {
@@ -1072,20 +667,98 @@ function initHeroSlider() {
 }
 </script>
 
+
+
+        <footer class="footer" style="background-image: url('https://jthemes.net/themes/wp/Rapid Visa/wp-content/uploads/2019/03/footer-bg.jpg');">
+            <div class="container py-5">
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <img src="{{ asset('img/logo.png') }}" alt="Rapid Visa Logo" style="height: 100px; margin-bottom: 1rem;">
+                        <p style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;">Your trusted partner for visa solutions. From application to approval, we handle every step with professionalism and care, making your travel and immigration process stress-free.</p>
+                        <div class="social-icons mt-4">
+                            <a href="#" class="me-3" style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="me-3" style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="me-3" style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"><i class="fab fa-google-plus-g"></i></a>
+                            <a href="#" class="me-3" style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <h5 style="background: linear-gradient(135deg, #000000, #000000); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: bold;">Contact Us</h5>
+                        <ul class="list-unstyled">
+                            <li class="d-flex align-items-start mb-3">
+                                <i class="fas fa-map-marker-alt me-3 mt-1" style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"></i>
+                                <span style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;">Office 603, 06th Floor Umm Al Quwain Bank Building, <br> Bank Street, Bur Dubai. Dubai, P.O.BOX : 243173, Dubai, UAE</span>
+                            </li>
+                            <li class="d-flex align-items-start mb-3">
+                                <i class="fas fa-phone me-3 mt-1" style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"></i>
+                                <span style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;"> +971-56-939-8472</span>
+                            </li><li class="d-flex align-items-start mb-3">
+                                <i class="fas fa-phone me-3 mt-1" style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"></i>
+                                <span style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;"> +971-4-265-4627</span>
+                            </li>
+                            <li class="d-flex align-items-start">
+                                <i class="fas fa-envelope me-3 mt-1" style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"></i>
+                                <span style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;">info@wahegurutravels.com</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <h5 style="background: linear-gradient(135deg, #000000, #000000); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: bold;">Subscribe</h5>
+                        <p style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;">Subscribe to our newsletter for the latest updates.</p>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Your Email" style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                            <button class="btn btn-warning" type="button">Subscribe</button>
+                        </div>
+                        <small style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">We never share your email with anyone else.</small>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom text-center py-3" style="background: linear-gradient(135deg, #000080, #4169E1);">
+                <p class="mb-0" style="background: #ffffff; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600; font-size: 1.1rem;">&copy; 2025 Rapid Visa | All Rights Reserved. | &copy; Developed By wahegurutravels.com</p>
+            </div>
+        </footer>
 @endsection
 
 @push('scripts')
 <script>
     $(document).ready(function(){
-        $(".hero-slider").owlCarousel({
-            items: 1,
-            loop: true,
+        initHeroSlider();
+        $('.card_slide_2_item').slick({
+            slidesToShow: 4,
+            slidesToScroll: 1,
             autoplay: true,
-            autoplayTimeout: 3000,
-            smartSpeed: 1500,
-            nav: false,
-            dots: true
+            autoplaySpeed: 2000,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                        infinite: true,
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
         });
     });
 </script>
+<style>
+    .tab-pane.fade {
+        transition: opacity 0.5s ease-in-out;
+    }
+</style>
 @endpush
