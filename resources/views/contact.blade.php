@@ -357,5 +357,4 @@
         <img src="https://i.imgur.com/6B4Y73A.png" alt="Worldwide Presence" class="img-fluid">
     </div>
 </div>
-
 @endsection

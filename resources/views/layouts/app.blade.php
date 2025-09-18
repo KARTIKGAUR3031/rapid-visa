@@ -15,6 +15,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
@@ -423,71 +424,50 @@
         }
 
         .footer {
-            background-color: linear-gradient(135deg, #d65656ff, #eeeb34ff)
-            background-size: cover;
-            background-position: center;
-            color: #000000;
+            background-color: #f8f9fa;
+            color: #6c757d;
         }
 
         .footer h5 {
-            font-weight: bold;
-            margin-bottom: 1.5rem;
+            color: #343a40;
+            font-weight: 600;
         }
 
         .footer p {
-            color: #000000;
-            font-weight: bold;
+            color: #6c757d;
         }
 
         .footer .social-icons a {
-            color: #fff;
-            margin-right: 1rem;
-            font-size: 1.2rem;
-            transition: all 0.3s ease-in-out;
+            color: #6c757d;
+            transition: color 0.3s ease;
         }
 
         .footer .social-icons a:hover {
             color: #ee9734ff;
-            transform: translateY(-2px);
-        }
-
-        .footer .list-unstyled li {
-            margin-bottom: 1rem;
         }
 
         .footer .list-unstyled a {
-            color: #ccc;
-            text-decoration: none;
+            color: #6c757d;
+            transition: color 0.3s ease;
         }
 
         .footer .list-unstyled a:hover {
-            color: #fff;
+            color: #ee9734ff;
         }
 
         .footer .input-group .form-control {
-            background-color: rgba(255, 255, 255, 0.2);
-            border: none;
-            color: #fff;
-        }
-
-        .footer .input-group .form-control::placeholder {
-            color: #ccc;
+            border-color: #ced4da;
         }
 
         .footer .btn-warning {
-            background: linear-gradient(135deg, #000080, #4169E1);
-            border-color: #000000;
-            color: #ffffff;
-            font-weight: bold;
+            background-color: #ee9734ff;
+            border-color: #ee9734ff;
+            color: #fff;
         }
 
         .footer-bottom {
-            background-color: #1a1a1a;
-        }
-
-        .footer-bottom p {
-            margin-bottom: 0;
-            color: #ffffffff;
+            background-color: #e9ecef;
+            color: #6c757d;
         }
 
         .hero-slider .hero-item {
@@ -536,6 +516,118 @@
 
         .hero-slider .owl-dots .owl-dot.active {
             opacity: 1;
+        }
+        .footer-modern {
+            background-color: #1a1a1a;
+            color: #a9a9a9;
+            padding-top: 60px;
+        }
+
+        .footer-top {
+            padding-bottom: 60px;
+        }
+
+        .footer-widget .widget-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-widget .widget-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background-color: #ee9734ff;
+        }
+
+        .footer-widget p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .footer-widget .list-unstyled li {
+            margin-bottom: 12px;
+        }
+
+        .footer-widget .list-unstyled a {
+            color: #a9a9a9;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-widget .list-unstyled a:hover {
+            color: #ee9734ff;
+        }
+
+        .footer-widget .list-unstyled i {
+            margin-right: 10px;
+            color: #ee9734ff;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+            background-color: #333;
+            color: #fff;
+            margin-right: 10px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: #ee9734ff;
+            color: #fff;
+        }
+
+        .newsletter-form {
+            position: relative;
+        }
+
+        .newsletter-form input {
+            width: 100%;
+            padding: 12px 20px;
+            background-color: #333;
+            border: none;
+            border-radius: 25px;
+            color: #fff;
+        }
+
+        .newsletter-form button {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            bottom: 5px;
+            width: 40px;
+            background-color: #ee9734ff;
+            border: none;
+            border-radius: 20px;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #d67c1c;
+        }
+
+        .footer-bottom {
+            background-color: #000;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+            font-size: 0.9rem;
         }
     </style>
 </head>
@@ -605,7 +697,7 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('dashboard') }}">
+                                    <a class="dropdown-item" href="{{ route('dashboard.index') }}">
                                         {{ __('Dashboard') }}
                                     </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
@@ -653,6 +745,65 @@
             @endif
             @yield('content')
         </main>
+
+    <footer class="footer-modern">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-widget">
+                            <img src="{{ asset('img/logo.png') }}" alt="Rapid Visa Logo" style="height: 100px; margin-bottom: 1rem;">
+                            <h5 class="widget-title">About RapidVisa</h5>
+                            <p>Your trusted partner for all visa and immigration needs. We simplify the process and guide you every step of the way.</p>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6">
+                        <div class="footer-widget">
+                            <h5 class="widget-title">Quick Links</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="{{ url('/') }}">Home</a></li>
+                                <li><a href="{{ url('/about') }}">About</a></li>
+                                <li><a href="{{ url('/testimonials') }}">Testimonials</a></li>
+                                <li><a href="{{ url('/contact') }}">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget">
+                            <h5 class="widget-title">Contact Us</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-map-marker-alt"></i> Office 603, 06th Floor Umm Al Quwain Bank Building, Bank Street, Bur Dubai. Dubai, P.O.BOX : 243173, Dubai, UAE</span>
+                                <li><i class="fas fa-phone"></i> +971-56-939-8472</li>
+                                <li><i class="fas fa-phone"></i> +971-4-265-4627</li>
+                                <li><i class="fas fa-envelope"></i> info@wahegurutravels.com</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget">
+                            <h5 class="widget-title">Newsletter</h5>
+                            <p>Subscribe to our newsletter for the latest updates.</p>
+                            <form class="newsletter-form">
+                                <input type="email" placeholder="Your Email">
+                                <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="footer-bottom text-center py-3" style="background: linear-gradient(135deg, #000000ff, #ee9734ff);">
+                <p class="mb-0" style="background: #ffffff; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600; font-size: 1.1rem;">&copy; 2025 Rapid Visa | All Rights Reserved. | &copy; Developed By wahegurutravels.com</p>
+            </div>
+    </footer>
+
+    </main>
 
 
     </div>

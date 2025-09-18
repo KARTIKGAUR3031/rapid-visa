@@ -82,7 +82,7 @@
     <aside class="sidebar">
         <div class="logo">RapidVisa</div>
         <nav class="nav flex-column">
-            <a class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}" href="{{ route('dashboard') }}">
+            <a class="nav-link {{ request()->routeIs('dashboard.index') ? 'active' : '' }}" href="{{ route('dashboard.index') }}">
                 <i class="fas fa-tachometer-alt mr-2"></i> Dashboard
             </a>
             <a class="nav-link {{ request()->routeIs('applications') ? 'active' : '' }}" href="{{ route('applications') }}">

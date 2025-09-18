@@ -22,10 +22,16 @@ use App\Http\Controllers\OcrController;
 
 Route::post('/ocr/upload', [OcrController::class, 'upload'])->name('ocr.upload');
 
-use App\Http\Controllers\UserDashboardController;
+
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', [UserDashboardController::class, 'index'])->name('user.dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+    
+    Route::get('/dashboard/applications', [DashboardController::class, 'applications'])->name('dashboard.applications');
+    Route::get('/dashboard/documents', [DashboardController::class, 'documents'])->name('dashboard.documents');
+    Route::post('/dashboard/documents/upload', [DashboardController::class, 'upload'])->name('dashboard.documents.upload');
+    Route::get('/dashboard/profile', [DashboardController::class, 'profile'])->name('dashboard.profile');
+    Route::get('applications/create', [VisaApplicationController::class, 'create'])->name('applications.create');
 });
 
 Route::get('/', function () {
@@ -33,8 +39,6 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
-Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::view('/visas', 'visas')->name('visas');
 use App\Http\Controllers\TestimonialController;
@@ -50,11 +54,11 @@ Route::view('/contact', 'contact')->name('contact');
 
 Route::get('/visa/{country}', [VisaController::class, 'show'])->name('visa.show');
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
 
 Route::get('/visa/apply', [VisaApplicationController::class, 'create'])->name('visa.apply');
 Route::post('/visa/apply', [VisaApplicationController::class, 'store'])->name('visa.store');
 
-Route::prefix('admin')->name('admin.')->group(function () {
+Route::prefix('admin')->name('admin.')->middleware('admin')->group(function () {
     Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
 });

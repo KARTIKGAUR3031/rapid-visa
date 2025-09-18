@@ -21,7 +21,14 @@
 <form action="{{ route('visa.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <input type="hidden" name="country" value="{{ request('country') }}">
-    <input type="hidden" name="image" value="{{ request('image') }}">
+
+    <div class="col-md-6 mb-3">
+        <label for="image" class="form-label">Applicant Photo*</label>
+        <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image" required accept=".jpg,.jpeg,.png,.pdf">
+        @error('image')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
 
     @if (session('success'))
         <div class="alert alert-success">

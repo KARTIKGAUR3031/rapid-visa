@@ -45,112 +45,130 @@
         box-shadow: 0 15px 35px rgba(217, 119, 6, 0.3);
         filter: brightness(1.1);
     }
+
+    .country-gallery {
+        display: flex;
+        height: 60vh;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .country-gallery-item {
+        flex: 1;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        transition: flex 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .country-gallery-item::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    .country-gallery-text {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+        color: #fff;
+        transform: translateY(100%);
+        transition: transform 0.5s ease-in-out;
+        z-index: 2;
+    }
+
+    .country-gallery-item.active .country-gallery-text {
+        transform: translateY(0);
+    }
+
+    .country-gallery-text h3 {
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .country-gallery-text p {
+        font-size: 1.1rem;
+    }
+
+    .country-gallery-item.active {
+        flex: 5;
+    }
 </style>
 
 <div class="hero-slider owl-carousel">
-    <div class="hero-item" data-bg="{{ asset('img/slider/slider3.png') }}">
-        <div class="hero-loading"></div>
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    <span class="text-highlight">Your Trusted Immigration & Visa Consultant</span>
-                </h1>
-                <p class="hero-subtitle">
-                    Find the right visa for you
-                </p>
-                <a href="#services" class="btn-cta">
-                    <span>Get Started</span>
-                    <i class="fas fa-arrow-right"></i>
-                </a>
+        <div class="hero-item" data-bg="{{asset('img/slider/slider3.png')}}">
+            <div class="hero-loading"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title animate__animated animate__fadeInUp">Your Trusted Immigration and Visa Consultant</h1>
+                    <p class="hero-subtitle animate__animated animate__fadeInUp">We make the visa process faster, easier, and stress-free.</p>
+                    <a href="{{ route('contact') }}" class="btn-cta animate__animated animate__fadeInUp">Get a Free Consultation</a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-item" data-bg="{{asset('img/slider/slider4.png')}}">
+            <div class="hero-loading"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title animate__animated animate__fadeInUp">Expert Guidance for Your Visa Application</h1>
+                    <p class="hero-subtitle animate__animated animate__fadeInUp">Navigating the complexities of visa applications with ease.</p>
+                    <a href="{{ route('visas') }}" class="btn-cta animate__animated animate__fadeInUp">Explore Visa Options</a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-item" data-bg="{{asset('img/slider/slider5.png')}}">
+            <div class="hero-loading"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title animate__animated animate__fadeInUp">Your Gateway to Global Opportunities</h1>
+                    <p class="hero-subtitle animate__animated animate__fadeInUp">Unlock your potential with our expert visa services.</p>
+                    <a href="{{ route('about') }}" class="btn-cta animate__animated animate__fadeInUp">Learn More About Us</a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-item" data-bg="{{asset('img/slider/slider6.webp')}}">
+            <div class="hero-loading"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title animate__animated animate__fadeInUp">Begin Your Journey with Confidence</h1>
+                    <p class="hero-subtitle animate__animated animate__fadeInUp">We are committed to helping you achieve your travel and immigration goals.</p>
+                    <a href="{{ route('testimonials') }}" class="btn-cta animate__animated animate__fadeInUp">See Client Stories</a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-item" data-bg="{{asset('img/slider/slider1.webp')}}">
+            <div class="hero-loading"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title animate__animated animate__fadeInUp">Your Trusted Immigration and Visa Consultant</h1>
+                    <p class="hero-subtitle animate__animated animate__fadeInUp">We make the visa process faster, easier, and stress-free.</p>
+                    <a href="{{ route('contact') }}" class="btn-cta animate__animated animate__fadeInUp">Get a Free Consultation</a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-item" data-bg="{{asset('img/slider/slider2.png')}}">
+            <div class="hero-loading"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title animate__animated animate__fadeInUp">Expert Guidance for Your Visa Application</h1>
+                    <p class="hero-subtitle animate__animated animate__fadeInUp">Navigating the complexities of visa applications with ease.</p>
+                    <a href="{{ route('visas') }}" class="btn-cta animate__animated animate__fadeInUp">Explore Visa Options</a>
+                </div>
             </div>
         </div>
     </div>
-    <div class="hero-item" data-bg="{{ asset('img/slider/slider4.png') }}">
-        <div class="hero-loading"></div>
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    <span class="text-highlight">Expert Guidance for a Smooth Process</span>
-                </h1>
-                <p class="hero-subtitle">
-                    Your journey to a new country starts here
-                </p>
-                <a href="#contact" class="btn-cta">
-                    <span>Contact Us</span>
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="hero-item" data-bg="{{ asset('img/slider/slider5.png') }}">
-        <div class="hero-loading"></div>
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    <span class="text-highlight">Your Future Awaits, We'll Help You Get There</span>
-                </h1>
-                <p class="hero-subtitle">
-                    Comprehensive visa and immigration services
-                </p>
-                <a href="#services" class="btn-cta">
-                    <span>Explore Services</span>
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="hero-item" data-bg="{{ asset('img/slider/slider6.webp') }}">
-        <div class="hero-loading"></div>
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    <span class="text-highlight">Your Future Awaits, We'll Help You Get There</span>
-                </h1>
-                <p class="hero-subtitle">
-                    Comprehensive visa and immigration services
-                </p>
-                <a href="#services" class="btn-cta">
-                    <span>Learn More</span>
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="hero-item" data-bg="{{ asset('img/slider/slider1.webp') }}">
-        <div class="hero-loading"></div>
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    <span class="text-highlight">Your Future Awaits, We'll Help You Get There</span>
-                </h1>
-                <p class="hero-subtitle">
-                    Comprehensive visa and immigration services
-                </p>
-                <a href="#services" class="btn-cta">
-                    <span>Get Started</span>
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="hero-item" data-bg="{{ asset('img/slider/slider2.png') }}">
-        <div class="hero-loading"></div>
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    <span class="text-highlight">Your Future Awaits, We'll Help You Get There</span>
-                </h1>
-                <p class="hero-subtitle">
-                    Comprehensive visa and immigration services
-                </p>
-                <a href="#services" class="btn-cta">
-                    <span>Get Started</span>
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
 <div class="about-section animate-on-scroll slide-in-left" style="padding: 100px 0;">
     <div class="container">
         <div class="row align-items-center">
@@ -177,93 +195,184 @@
     </div>
 </div>
 
-<!-- Services Section -->
-<div class="service-section" style="padding: 100px 0; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const animatedElements = document.querySelectorAll('.animate-on-scroll');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const animation = entry.target.getAttribute('data-animation');
+                    entry.target.classList.add('animate__animated', animation);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        animatedElements.forEach(element => {
+            observer.observe(element);
+        });
+
+        function initHeroSlider() {
+            const heroSlider = $('.hero-slider');
+            heroSlider.owlCarousel({
+                items: 1,
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                smartSpeed: 1000,
+                dots: true,
+                nav: false,
+                onInitialized: function(event) {
+                    const currentItem = $(event.target).find('.owl-item.active .hero-item');
+                    const bg = currentItem.data('bg');
+                    currentItem.css('--bg-image', `url(${bg})`);
+                    currentItem.find('.hero-loading').hide();
+                },
+                onTranslated: function(event) {
+                    const allItems = $(event.target).find('.owl-item .hero-item');
+                    allItems.find('.hero-title, .hero-subtitle, .btn-cta').removeClass('animate__animated animate__fadeInUp');
+
+                    const currentItem = $(event.target).find('.owl-item.active .hero-item');
+                    const bg = currentItem.data('bg');
+                    currentItem.css('--bg-image', `url(${bg})`);
+                    currentItem.find('.hero-loading').hide();
+
+                    setTimeout(() => {
+                        currentItem.find('.hero-title, .hero-subtitle, .btn-cta').addClass('animate__animated animate__fadeInUp');
+                    }, 200);
+                }
+            });
+        }
+
+        initHeroSlider();
+
+        const countryGalleryItems = document.querySelectorAll('.country-gallery-item');
+        if (countryGalleryItems.length > 0) {
+            countryGalleryItems[0].classList.add('active');
+            countryGalleryItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    countryGalleryItems.forEach(innerItem => {
+                        innerItem.classList.remove('active');
+                    });
+                    item.classList.add('active');
+                });
+            });
+        }
+    });
+</script>
+<section class="country-gallery-section" style="padding-top: 100px;">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8 text-center mb-5">
-                <h2 class="text-white mb-3" style="font-size: 2.5rem; font-weight: 700;">Our Services</h2>
-                <p class="text-white-50" style="font-size: 1.2rem;">Comprehensive immigration solutions tailored to your needs</p>
+                <h2 class="mb-3" style="font-size: 2.5rem; font-weight: 700;">Countries We Support</h2>
+            </div>
+        </div>
+    </div>
+    <div class="country-gallery">
+        <div class="country-gallery-item" style="background-image: url('{{asset('img/country/canada.webp')}}');">
+            <div class="country-gallery-text">
+                <h3>Canada</h3>
+                <p>Your gateway to a new life in the Great White North.</p>
+            </div>
+        </div>
+        <div class="country-gallery-item" style="background-image: url('{{asset('img/country/australia.webp')}}');">
+            <div class="country-gallery-text">
+                <h3>Australia</h3>
+                <p>Discover the opportunities waiting for you down under.</p>
+            </div>
+        </div>
+        <div class="country-gallery-item" style="background-image: url('{{asset('img/country/england.webp')}}');">
+            <div class="country-gallery-text">
+                <h3>United Kingdom</h3>
+                <p>Experience the rich history and vibrant culture of the UK.</p>
+            </div>
+        </div>
+        <div class="country-gallery-item" style="background-image: url('{{asset('img/country/germany.webp')}}');">
+            <div class="country-gallery-text">
+                <h3>Germany</h3>
+                <p>Build your future in the heart of Europe.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<div class="service-section-new" style="padding: 80px 0; background: #fff;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center mb-5">
+                <h2 class="mb-4" style="font-size: 2.8rem; font-weight: 800; color: #333;">Our Services</h2>
+                <p class="text-muted" style="font-size: 1.1rem; max-width: 600px; margin: 0 auto;">We offer a wide range of immigration services to help you achieve your dreams.</p>
             </div>
         </div>
         
         <div class="row g-4">
             <div class="col-lg-4 col-md-6">
-                <div class="service-card" style="background: white; border-radius: 15px; padding: 40px 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease; height: 100%;">
-                    <div class="service-icon mb-4" style="width: 70px; height: 70px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; animation: icon-float 3s ease-in-out infinite;">
-                        <i class="fas fa-briefcase text-white" style="font-size: 1.5rem;"></i>
+                <div class="service-card-new">
+                    <div class="service-card-new-icon">
+                        <i class="fas fa-briefcase"></i>
                     </div>
-                    <h4 class="text-center mb-3" style="font-weight: 600; color: #333;">Work Visa</h4>
-                    <p class="text-center text-muted mb-4">Professional work visa solutions for global opportunities with expert guidance.</p>
-                    <div class="text-center">
-                        <a href="{{ route('visas') }}" class="btn btn-primary" style="background: linear-gradient(135deg, #667eea, #764ba2); border: none; border-radius: 25px; padding: 10px 30px;">Learn More</a>
-                    </div>
+                    <h4 class="service-card-new-title">Work Visa</h4>
+                    <p class="service-card-new-description">Professional work visa solutions for global opportunities with expert guidance.</p>
+                    <a href="{{ route('visas') }}" class="service-card-new-link">Read More</a>
                 </div>
             </div>
 
             <div class="col-lg-4 col-md-6">
-                <div class="service-card" style="background: white; border-radius: 15px; padding: 40px 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease; height: 100%;">
-                    <div class="service-icon mb-4" style="width: 70px; height: 70px; background: linear-gradient(135deg, #f093fb, #f5576c); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; animation: icon-float 3s ease-in-out infinite; animation-delay: 0.2s;">
-                        <i class="fas fa-graduation-cap text-white" style="font-size: 1.5rem;"></i>
+                <div class="service-card-new">
+                    <div class="service-card-new-icon">
+                        <i class="fas fa-graduation-cap"></i>
                     </div>
-                    <h4 class="text-center mb-3" style="font-weight: 600; color: #333;">Student Visa</h4>
-                    <p class="text-center text-muted mb-4">Comprehensive student visa support for academic excellence worldwide.</p>
-                    <div class="text-center">
-                        <a href="{{ route('visas') }}" class="btn btn-primary" style="background: linear-gradient(135deg, #f093fb, #f5576c); border: none; border-radius: 25px; padding: 10px 30px;">Learn More</a>
-                    </div>
+                    <h4 class="service-card-new-title">Student Visa</h4>
+                    <p class="service-card-new-description">Comprehensive student visa support for academic excellence worldwide.</p>
+                    <a href="{{ route('visas') }}" class="service-card-new-link">Read More</a>
                 </div>
             </div>
 
             <div class="col-lg-4 col-md-6">
-                <div class="service-card" style="background: white; border-radius: 15px; padding: 40px 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease; height: 100%;">
-                    <div class="service-icon mb-4" style="width: 70px; height: 70px; background: linear-gradient(135deg, #4facfe, #00f2fe); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; animation: icon-float 3s ease-in-out infinite; animation-delay: 0.4s;">
-                        <i class="fas fa-id-card text-white" style="font-size: 1.5rem;"></i>
+                <div class="service-card-new">
+                    <div class="service-card-new-icon">
+                        <i class="fas fa-id-card"></i>
                     </div>
-                    <h4 class="text-center mb-3" style="font-weight: 600; color: #333;">Permanent Residency</h4>
-                    <p class="text-center text-muted mb-4">Achieve your permanent residency dreams with expert green card guidance.</p>
-                    <div class="text-center">
-                        <a href="{{ route('visas') }}" class="btn btn-primary" style="background: linear-gradient(135deg, #4facfe, #00f2fe); border: none; border-radius: 25px; padding: 10px 30px;">Learn More</a>
-                    </div>
+                    <h4 class="service-card-new-title">Permanent Residency</h4>
+                    <p class="service-card-new-description">Achieve your permanent residency dreams with expert green card guidance.</p>
+                    <a href="{{ route('visas') }}" class="service-card-new-link">Read More</a>
                 </div>
             </div>
 
             <div class="col-lg-4 col-md-6">
-                <div class="service-card" style="background: white; border-radius: 15px; padding: 40px 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease; height: 100%;">
-                    <div class="service-icon mb-4" style="width: 70px; height: 70px; background: linear-gradient(135deg, #fa709a, #fee140); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; animation: icon-float 3s ease-in-out infinite; animation-delay: 0.6s;">
-                        <i class="fas fa-users text-white" style="font-size: 1.5rem;"></i>
+                <div class="service-card-new">
+                    <div class="service-card-new-icon">
+                        <i class="fas fa-users"></i>
                     </div>
-                    <h4 class="text-center mb-3" style="font-weight: 600; color: #333;">Family Immigration</h4>
-                    <p class="text-center text-muted mb-4">Reunite with your loved ones through expert family immigration services.</p>
-                    <div class="text-center">
-                        <a href="{{ route('visas') }}" class="btn btn-primary" style="background: linear-gradient(135deg, #fa709a, #fee140); border: none; border-radius: 25px; padding: 10px 30px;">Learn More</a>
-
-                    </div>
+                    <h4 class="service-card-new-title">Family Immigration</h4>
+                    <p class="service-card-new-description">Reunite with your loved ones through expert family immigration services.</p>
+                    <a href="{{ route('visas') }}" class="service-card-new-link">Read More</a>
                 </div>
             </div>
 
             <div class="col-lg-4 col-md-6">
-                <div class="service-card" style="background: white; border-radius: 15px; padding: 40px 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease; height: 100%;">
-                    <div class="service-icon mb-4" style="width: 70px; height: 70px; background: linear-gradient(135deg, #a8edea, #fed6e3); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; animation: icon-float 3s ease-in-out infinite; animation-delay: 0.8s;">
-                        <i class="fas fa-handshake text-dark" style="font-size: 1.5rem;"></i>
+                <div class="service-card-new">
+                    <div class="service-card-new-icon">
+                        <i class="fas fa-handshake"></i>
                     </div>
-                    <h4 class="text-center mb-3" style="font-weight: 600; color: #333;">Business & Investor</h4>
-                    <p class="text-center text-muted mb-4">Strategic business and investor visa solutions for expansion.</p>
-                    <div class="text-center">
-                        <a href="{{ route('contact') }}" class="btn btn-primary" style="background: linear-gradient(135deg, #a8edea, #fed6e3); color: #333; border: none; border-radius: 25px; padding: 10px 30px;">Learn More</a>
-                    </div>
+                    <h4 class="service-card-new-title">Business & Investor</h4>
+                    <p class="service-card-new-description">Strategic business and investor visa solutions for expansion.</p>
+                    <a href="{{ route('contact') }}" class="service-card-new-link">Read More</a>
                 </div>
             </div>
 
             <div class="col-lg-4 col-md-6">
-                <div class="service-card" style="background: white; border-radius: 15px; padding: 40px 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease; height: 100%;">
-                    <div class="service-icon mb-4" style="width: 70px; height: 70px; background: linear-gradient(135deg, #ffecd2, #fcb69f); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; animation: icon-float 3s ease-in-out infinite; animation-delay: 1s;">
-                        <i class="fas fa-chess-knight text-dark" style="font-size: 1.5rem;"></i>
+                <div class="service-card-new">
+                    <div class="service-card-new-icon">
+                        <i class="fas fa-chess-knight"></i>
                     </div>
-                    <h4 class="text-center mb-3" style="font-weight: 600; color: #333;">Immigration Consulting</h4>
-                    <p class="text-center text-muted mb-4">Strategic guidance for complex immigration cases and scenarios.</p>
-                    <div class="text-center">
-                        <a href="{{ route('contact') }}" class="btn btn-primary" style="background: linear-gradient(135deg, #ffecd2, #fcb69f); color: #333; border: none; border-radius: 25px; padding: 10px 30px;">Learn More</a>
-                    </div>
+                    <h4 class="service-card-new-title">Immigration Consulting</h4>
+                    <p class="service-card-new-description">Strategic guidance for complex immigration cases and scenarios.</p>
+                    <a href="{{ route('contact') }}" class="service-card-new-link">Read More</a>
                 </div>
             </div>
         </div>
@@ -271,135 +380,71 @@
 </div>
 
 <style>
-@keyframes icon-float {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-15px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-.service-card {
+.service-card-new {
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
     transition: all 0.3s ease;
+    height: 100%;
+    border: 1px solid #e8e8e8;
 }
-.service-card:hover {
+
+.service-card-new:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15) !important;
+    background-color: #007bff;
+    color: #fff;
 }
-.service-card .btn {
-    transition: all 0.3s ease;
+
+.service-card-new:hover .service-card-new-icon i {
+    color: #fff;
 }
-.service-card .btn:hover {
-    transform: scale(1.05);
+
+.service-card-new:hover .service-card-new-title,
+.service-card-new:hover .service-card-new-description,
+.service-card-new:hover .service-card-new-link {
+    color: #fff;
 }
+
+.service-card-new-icon {
+    font-size: 3rem;
+    color: #007bff;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+.service-card-new-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+.service-card-new-description {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+.service-card-new-link {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
 @media (max-width: 768px) {
-    .service-section {
+    .service-section-new {
         padding: 60px 0 !important;
     }
-    .service-card {
+    .service-card-modern {
         margin-bottom: 30px;
     }
 }
 </style>
-
-
- <section class="tabbed-visa-section" style="position: relative; background-size: cover; background-position: center center; padding: 100px 0; background-color: rgba(0, 0, 0, 0.5);">
-
-    <div class="container" style="position: relative; z-index: 1;">
-        <div class="row justify-content-center">
-            <div class="col-lg-8 text-center mb-5">
-                <h2 class="text-white mb-3" style="font-size: 2.5rem; font-weight: 700;">Countries We Support</h2>
-                <p class="text-white-50" style="font-size: 1.2rem;">Select a country to see the available visa types.</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="nav nav-pills nav-justified" id="v-pills-tab" role="tablist" aria-orientation="horizontal" style="border-bottom: 1px solid rgba(255, 255, 255, 0.2);">
-                    <button class="nav-link active" id="v-pills-canada-tab" data-bs-toggle="pill" data-bs-target="#v-pills-canada" type="button" role="tab" aria-controls="v-pills-canada" aria-selected="true" data-image="{{ asset('img/contory/canada.webp') }}" style="background-color: transparent; border-radius: 0; color: white; border-bottom: 2px solid white;">
-                         Canada
-                    </button>
-                    <button class="nav-link" id="v-pills-australia-tab" data-bs-toggle="pill" data-bs-target="#v-pills-australia" type="button" role="tab" aria-controls="v-pills-australia" aria-selected="false" data-image="{{ asset('img/contory/australia.webp') }}" style="background-color: transparent; border-radius: 0; color: white;">
-                         Australia
-                    </button>
-                    <button class="nav-link" id="v-pills-uk-tab" data-bs-toggle="pill" data-bs-target="#v-pills-uk" type="button" role="tab" aria-controls="v-pills-uk" aria-selected="false" data-image="{{ asset('img/contory/england.webp') }}" style="background-color: transparent; border-radius: 0; color: white;">
-                         England
-                    </button>
-                    <button class="nav-link" id="v-pills-usa-tab" data-bs-toggle="pill" data-bs-target="#v-pills-usa" type="button" role="tab" aria-controls="v-pills-usa" aria-selected="false" data-image="{{ asset('img/contory/germany.webp') }}" style="background-color: transparent; border-radius: 0; color: white;">
-                        Germany
-                    </button>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="tab-content" id="v-pills-tabContent" style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 10px; padding: 30px; margin-top: 20px;">
-                    <div class="tab-pane fade show active" id="v-pills-canada" role="tabpanel" aria-labelledby="v-pills-canada-tab">
-                        <h3 class="text-white mb-4">Canada Visa Types</h3>
-                        <ul class="visa-type-list" style="list-style: none; padding: 0;">
-                            <li><a href="#" style="color: white;">Tourist Visa</a></li>
-                            <li><a href="#" style="color: white;">Working Holiday Visa</a></li>
-                            <li><a href="#" style="color: white;">Temporary Work Visa</a></li>
-                            <li><a href="#" style="color: white;">Student Visa</a></li>
-                            <li><a href="#" style="color: white;">Family Visa</a></li>
-                            <li><a href="#" style="color: white;">Protection Visa</a></li>
-                        </ul>
-                    </div>
-                    <div class="tab-pane fade" id="v-pills-australia" role="tabpanel" aria-labelledby="v-pills-australia-tab">
-                        <h3 class="text-white mb-4">Australia Visa Types</h3>
-                        <ul class="visa-type-list" style="list-style: none; padding: 0;">
-                            <li><a href="#" style="color: white;">Tourist Visa</a></li>
-                            <li><a href="#" style="color: white;">Working Holiday Visa</a></li>
-                            <li><a href="#" style="color: white;">Temporary Work Visa</a></li>
-                            <li><a href="#" style="color: white;">Student Visa</a></li>
-                            <li><a href="#" style="color: white;">Family Visa</a></li>
-                            <li><a href="#" style="color: white;">Protection Visa</a></li>
-                        </ul>
-                    </div>
-                    <div class="tab-pane fade" id="v-pills-uk" role="tabpanel" aria-labelledby="v-pills-uk-tab">
-                        <h3 class="text-white mb-4">England Visa Types</h3>
-                        <ul class="visa-type-list" style="list-style: none; padding: 0;">
-                            <li><a href="#" style="color: white;">Tourist Visa</a></li>
-                            <li><a href="#" style="color: white;">Working Holiday Visa</a></li>
-                            <li><a href="#" style="color: white;">Temporary Work Visa</a></li>
-                            <li><a href="#" style="color: white;">Student Visa</a></li>
-                            <li><a href="#" style="color: white;">Family Visa</a></li>
-                            <li><a href="#" style="color: white;">Protection Visa</a></li>
-                        </ul>
-                    </div>
-                    <div class="tab-pane fade" id="v-pills-usa" role="tabpanel" aria-labelledby="v-pills-usa-tab">
-                        <h3 class="text-white mb-4">Germany Visa Types</h3>
-                        <ul class="visa-type-list" style="list-style: none; padding: 0;">
-                            <li><a href="#" style="color: white;">Tourist Visa</a></li>
-                            <li><a href="#" style="color: white;">Working Holiday Visa</a></li>
-                            <li><a href="#" style="color: white;">Temporary Work Visa</a></li>
-                            <li><a href="#" style="color: white;">Student Visa</a></li>
-                            <li><a href="#" style="color: white;">Family Visa</a></li>
-                            <li><a href="#" style="color: white;">Protection Visa</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const tabbedSection = document.querySelector('.tabbed-visa-section');
-        const tabButtons = document.querySelectorAll('#v-pills-tab button');
-
-        tabButtons.forEach(button => {
-            button.addEventListener('click', function () {
-                const newImage = this.dataset.image;
-                tabbedSection.style.backgroundImage = `url(${newImage})`;
-            });
-        });
-
-        // Set the initial background image
-        const initialImage = document.querySelector('#v-pills-tab .active').dataset.image;
-        tabbedSection.style.backgroundImage = `url(${initialImage})`;
-    });
-</script>
-</section>
 <section style="padding: 80px 0;">
     <div class="container">
         <div class="row justify-content-center">
@@ -439,7 +484,6 @@
         </div>
     </div>
 </section>  
-
     <div class="container">
         <h2 style="text-align: center; margin-bottom: 50px;">Thousands Of People Choose Our Services</h2>
         <div class="row">
@@ -609,42 +653,7 @@ function initHeroSlider() {
 
     // Initialize Owl Carousel with advanced animation callbacks
     if (typeof $ !== 'undefined' && $.fn.owlCarousel) {
-        $('.hero-slider').owlCarousel({
-            items: 1,
-            loop: true,
-            autoplay: true,
-            autoplayTimeout: 3000,
-            autoplayHoverPause: true,
-            smartSpeed: 1200,
-            dots: true,
-            nav: false,
-            animateOut: 'fadeOut',
-            animateIn: 'fadeIn',
-            onInitialized: function() {
-                // Trigger entrance animations
-                setTimeout(() => {
-                    const activeSlide = document.querySelector('.owl-item.active');
-                    if (activeSlide) {
-                        activeSlide.classList.add('animated');
-                    }
-                }, 500);
-            },
-            onTranslate: function() {
-                // Reset animations before slide change
-                document.querySelectorAll('.hero-item').forEach(item => {
-                    item.classList.remove('animated');
-                });
-            },
-            onTranslated: function() {
-                // Trigger animations for new active slide
-                setTimeout(() => {
-                    const activeSlide = document.querySelector('.owl-item.active');
-                    if (activeSlide) {
-                        activeSlide.classList.add('animated');
-                    }
-                }, 200);
-            }
-        });
+
     }
 
     // Add scroll-triggered animations
@@ -666,57 +675,6 @@ function initHeroSlider() {
     });
 }
 </script>
-
-
-
-        <footer class="footer" style="background-image: url('https://jthemes.net/themes/wp/Rapid Visa/wp-content/uploads/2019/03/footer-bg.jpg');">
-            <div class="container py-5">
-                <div class="row">
-                    <div class="col-md-4 mb-4">
-                        <img src="{{ asset('img/logo.png') }}" alt="Rapid Visa Logo" style="height: 100px; margin-bottom: 1rem;">
-                        <p style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;">Your trusted partner for visa solutions. From application to approval, we handle every step with professionalism and care, making your travel and immigration process stress-free.</p>
-                        <div class="social-icons mt-4">
-                            <a href="#" class="me-3" style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="me-3" style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="me-3" style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"><i class="fab fa-google-plus-g"></i></a>
-                            <a href="#" class="me-3" style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <h5 style="background: linear-gradient(135deg, #000000, #000000); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: bold;">Contact Us</h5>
-                        <ul class="list-unstyled">
-                            <li class="d-flex align-items-start mb-3">
-                                <i class="fas fa-map-marker-alt me-3 mt-1" style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"></i>
-                                <span style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;">Office 603, 06th Floor Umm Al Quwain Bank Building, <br> Bank Street, Bur Dubai. Dubai, P.O.BOX : 243173, Dubai, UAE</span>
-                            </li>
-                            <li class="d-flex align-items-start mb-3">
-                                <i class="fas fa-phone me-3 mt-1" style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"></i>
-                                <span style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;"> +971-56-939-8472</span>
-                            </li><li class="d-flex align-items-start mb-3">
-                                <i class="fas fa-phone me-3 mt-1" style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"></i>
-                                <span style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;"> +971-4-265-4627</span>
-                            </li>
-                            <li class="d-flex align-items-start">
-                                <i class="fas fa-envelope me-3 mt-1" style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"></i>
-                                <span style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;">info@wahegurutravels.com</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <h5 style="background: linear-gradient(135deg, #000000, #000000); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: bold;">Subscribe</h5>
-                        <p style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;">Subscribe to our newsletter for the latest updates.</p>
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Your Email" style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
-                            <button class="btn btn-warning" type="button">Subscribe</button>
-                        </div>
-                        <small style="background: linear-gradient(135deg, #d65656ff, #eea334ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">We never share your email with anyone else.</small>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom text-center py-3" style="background: linear-gradient(135deg, #000080, #4169E1);">
-                <p class="mb-0" style="background: #ffffff; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600; font-size: 1.1rem;">&copy; 2025 Rapid Visa | All Rights Reserved. | &copy; Developed By wahegurutravels.com</p>
-            </div>
-        </footer>
 @endsection
 
 @push('scripts')

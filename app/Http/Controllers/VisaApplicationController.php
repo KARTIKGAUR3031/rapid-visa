@@ -45,7 +45,7 @@ class VisaApplicationController extends Controller
                 'passport_photo' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:2048',
                 'hotel_booking' => 'required|file|mimes:jpg,jpeg,png,pdf|max:2048',
                 'country' => 'required|string',
-                'image' => 'required|string',
+                'image' => 'required|file|mimes:jpg,jpeg,png,pdf|max:2048',
             ]);
         } catch (ValidationException $e) {
             Log::error('Validation failed: ' . $e->getMessage());
@@ -56,7 +56,7 @@ class VisaApplicationController extends Controller
         $application = new VisaApplication($validatedData);
         $application->user_id = Auth::id();
 
-        $fileKeys = ['aadhaar_card', 'passport_back', 'flight_ticket', 'old_visa', 'passport_front', 'passport_photo', 'hotel_booking'];
+        $fileKeys = ['aadhaar_card', 'passport_back', 'flight_ticket', 'old_visa', 'passport_front', 'passport_photo', 'hotel_booking', 'image'];
         foreach ($fileKeys as $key) {
             if ($request->hasFile($key)) {
                 $path = $request->file($key)->store('documents', 'public');
