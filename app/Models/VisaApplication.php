@@ -26,4 +26,9 @@ class VisaApplication extends Model
         'passport_photo',
         'hotel_booking',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

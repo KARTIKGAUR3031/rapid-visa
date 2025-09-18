@@ -61,4 +61,11 @@ Route::post('/visa/apply', [VisaApplicationController::class, 'store'])->name('v
 
 Route::prefix('admin')->name('admin.')->middleware('admin')->group(function () {
     Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
+    Route::get('/users', [AdminDashboardController::class, 'users'])->name('users');
+    Route::get('/applications', [AdminDashboardController::class, 'applications'])->name('applications');
+    Route::get('/applications/{application}/approve', [AdminDashboardController::class, 'approveApplication'])->name('applications.approve');
+    Route::get('/applications/{application}/cancel', [AdminDashboardController::class, 'cancelApplication'])->name('applications.cancel');
+    Route::get('/applications/{application}/reject', [AdminDashboardController::class, 'rejectApplication'])->name('applications.reject');
+    Route::get('/applications/{application}/request-documents', [AdminDashboardController::class, 'requestDocuments'])->name('applications.request-documents');
+    Route::get('/applications/{application}/request-payment', [AdminDashboardController::class, 'requestPayment'])->name('applications.request-payment');
 });

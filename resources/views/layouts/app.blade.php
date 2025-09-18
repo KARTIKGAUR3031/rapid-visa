@@ -697,6 +697,11 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    @if (auth()->check() && auth()->user()->is_admin)
+                                        <a class="dropdown-item" href="{{ route('admin.dashboard') }}">
+                                            {{ __('Admin Panel') }}
+                                        </a>
+                                    @endif
                                     <a class="dropdown-item" href="{{ route('dashboard.index') }}">
                                         {{ __('Dashboard') }}
                                     </a>
